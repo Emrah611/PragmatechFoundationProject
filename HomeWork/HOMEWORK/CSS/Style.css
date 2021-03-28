@@ -18,11 +18,13 @@
     height: 100px;
 }
 .menu{
+    cursor: pointer;
+    text-decoration: none;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
       background: rgb(172, 127, 127);
       color: rgb(8, 8, 8);
 }
@@ -49,6 +51,7 @@
     display: block;
 }
 .column-1{
+    cursor: pointer;
     font-size: 50px;
     margin: 0;
 }
@@ -59,4 +62,7 @@
 .fs:hover{
     transition: 1.5s ease;
     font-size: 100px;
+}
+button{
+    cursor: pointer;
 }
