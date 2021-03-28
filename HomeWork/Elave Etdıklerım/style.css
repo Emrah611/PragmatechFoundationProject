@@ -1,0 +1,43 @@
+/* #header {
+    background-color: black;
+    border: 2px solid red;
+}
+.container {
+    background-color: goldenrod;
+    width: 1000px;
+    margin: auto;
+}
+.column-1{
+    color:green;
+}
+
+.column-2{
+    color: honeydew;
+    display: inline-block; */
+    *{
+        box-sizing: border-box;
+    }
+    #header{
+        background-color: white;
+        border: 2px solid red;
+    }
+    .container{
+        background-color: green;
+        width: 1000px;
+        margin: auto;
+    }
+    .column-1{
+        color: greenyellow;
+    }
+    .column-3{
+      color: indigo;
+    }
+ul{
+    background-color: maroon;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+i{
+    font-size: 50px;
+}

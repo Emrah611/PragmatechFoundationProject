@@ -1,0 +1,62 @@
+
+
+.container{
+    display: flex;
+    width: 1110px;
+    max-width: 100%;
+    margin: auto;
+    border: 1px solid red;
+}
+.logo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(172, 127, 127);
+}
+.picture{
+    object-fit: contain;
+    height: 100px;
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+      background: rgb(172, 127, 127);
+      color: rgb(8, 8, 8);
+}
+.picture-item{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
+.pic{
+    width: 100%;
+    object-fit: cover;
+}
+.h{
+    height: 100%;
+}
+.bg{
+    background: rgb(172, 127, 127);
+}
+.over{
+    overflow: scroll;
+}
+.fom{
+    display: block;
+}
+.column-1{
+    font-size: 50px;
+    margin: 0;
+}
+.wh-100{
+    width: 100%;
+    height: 100%;
+}
+.fs:hover{
+    transition: 1.5s ease;
+    font-size: 100px;
+}

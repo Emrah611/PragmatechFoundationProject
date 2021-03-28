@@ -1,0 +1,47 @@
+    *{
+        box-sizing: border-box;
+    }
+   .container{
+       background-color: blue;
+       width: 1000px;
+       border: 2px solid black;
+       margin: 0 auto;
+       position: relative;
+   }
+  /*  .row{
+       color: chartreuse;
+       height: 150px;
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+   } */
+   .row{
+       display: flex;
+       color: green;
+
+   }
+   .w-25{
+       width: 25%;
+       color: yellow;
+   }
+   .w-75{
+       width: 75%;
+       color: yellow;
+   }
+   .bg-image{
+       background-image: url(../img/pexels-photo-1563356.jpeg);
+       height: 600px;
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center center;
+       position: relative;
+   }
+   .overlay{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       background-color: black;
+       opacity: 0.4;
+   }
