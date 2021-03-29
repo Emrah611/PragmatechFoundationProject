@@ -17,6 +17,9 @@
     object-fit: contain;
     height: 100px;
 }
+span{
+    margin-left: 10px;
+}
 .menu{
     cursor: pointer;
     text-decoration: none;
