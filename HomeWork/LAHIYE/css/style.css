@@ -1,0 +1,236 @@
+.container {
+    width: 100%;
+    max-width: 1349px;
+}
+
+.row1 {
+    background-color: #207DFF;
+    height: 33px;
+}
+
+.c-white {
+    color: #FFFFFF;
+}
+
+.c-black {
+    color: black;
+}
+
+.size {
+    padding: 10px 120px;
+}
+
+.size-2 {
+    padding: 10px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.size-3 {
+    padding: 10px 144px;
+}
+
+.mr-15 {
+    margin-right: 15px;
+}
+
+.ml-60 {
+    margin-left: 60;
+}
+
+.ml-45 {
+    margin-left: 45px;
+}
+
+.ml-144 {
+    margin-left: 144px;
+}
+
+.ml-100 {
+    margin-left: 100px;
+    margin-top: 25px;
+}
+
+.bg-color {
+    background-color: #E3E3E4;
+}
+
+.color-red {
+    color: red
+}
+
+h2 {
+    margin: 0;
+    padding: 70px 0 0 0;
+    font-size: 55px;
+    width: 40%;
+    color: black;
+}
+
+.p-absalute {
+    position: absolute;
+}
+
+.p {
+    padding: 0px 65px;
+    cursor: pointer;
+    /* position: fixed;
+    width: 100%;
+    top: 29px;
+    left: 0;
+    right: 0;
+    margin: 0; */
+}
+
+.p-2 {
+    padding: 23px 0;
+    /* position: fixed;
+    width: 100%;
+    top: 28px;
+    left: 355px;
+    right: 0;
+    margin: 0; */
+}
+
+h1 {
+    margin: 0;
+    margin-left: 55px;
+}
+
+.fs {
+    font-size: 16px;
+}
+
+.color-00002A {
+    color: #00002A;
+}
+
+.h-1000 {
+    height: 1000px;
+}
+
+.l-height {
+    Font-size: 18px;
+    Font-weight: 400;
+    Line-height: 21.6px;
+    background-color: #FE5F55;
+    margin-left: 40px;
+    color: white;
+    border-radius: 8px;
+    height: 40px;
+    width: 130px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.l-height:hover {
+    background-color: #207DFF;
+}
+
+.img-1 {
+    width: 100%;
+    Font-size: 17px;
+    Font-weight: 400;
+    Line-height: 30.6px;
+    object-fit: cover;
+}
+
+.absalute {
+    position: absolute;
+    top: 150px;
+    left: 120px;
+}
+
+.relative {
+    position: relative;
+}
+
+.d-block {
+    width: 40%;
+    display: block;
+    color: #836465;
+    margin: 35px 0 30px 0;
+    font-size: 20px;
+}
+
+.randevu {
+    Font-size: 18px;
+    Font-weight: 400;
+    Line-height: 21.6px;
+    background-color: #207DFE;
+    color: white;
+    border-radius: 35px;
+    height: 50px;
+    width: 138px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.randevu-2 {
+    Font-size: 18px;
+    Font-weight: 400;
+    Line-height: 21.6px;
+    background-color: #E2544C;
+    color: #9b4843;
+    border-radius: 35px;
+    height: 50px;
+    width: 138px;
+    cursor: pointer;
+    border: 1px solid #E2544C;
+    outline: none;
+}
+
+.randevu-2:hover {
+    background-color: white;
+    transition: all 0.1s ease 0s;
+}
+
+.figure-img {
+    width: 100%;
+    Font-size: 17px;
+    Font-weight: 400;
+    Line-height: 30.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 115px;
+}
+
+.img-2 {
+    width: 445px;
+    height: 620px;
+    object-fit: cover;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.color-1E73EB {
+    color: #1E73EB;
+    font-size: 30px;
+}
+
+.color-99A5C2 {
+    color: #99A5C2;
+    display: block;
+    width: 55%;
+    margin-left: 98px;
+    margin-top: 44px;
+    Font-size: 17px;
+    Font-weight: 400;
+    Line-height: 30.6px;
+}
+
+.fs-25 {
+    font-size: 44px;
+    display: block;
+    font-weight: 700;
+    width: 55%;
+    margin-left: 98px;
+    margin-top: 154px;
+}
