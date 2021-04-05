@@ -1,6 +1,11 @@
+@import 'grid.css';
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+}
+
+.ff-play {
+    font-family: 'Playfair Display', serif;
 }
 
 body {
@@ -27,6 +32,20 @@ figure {
     padding: 0;
 }
 
+.button {
+    background-color: #FF1616;
+    padding: 24px 34px;
+    border: none;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 0px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
 .header-logo {
     width: 167px;
     height: 37px;
@@ -44,6 +63,26 @@ figure {
     align-items: center;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.obj-cover {
+    object-fit: cover;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+.d-none {
+    display: none;
+}
+
 
 /* Spacing styles */
 
@@ -51,8 +90,48 @@ figure {
     padding: 20px 0;
 }
 
+.pxy {
+    padding: 30px 50px;
+}
+
+.py-5 {
+    padding: 50px 0;
+}
+
+.pl-5 {
+    padding-left: 50px;
+}
+
 .mx-auto {
     margin: 0 auto;
+}
+
+.mb-1 {
+    margin-bottom: 10px;
+}
+
+.mx-1 {
+    margin: 0 10px;
+}
+
+.mx-2 {
+    margin: 0 20px;
+}
+
+.ml-2 {
+    margin-left: 20px;
+}
+
+.mt-2 {
+    margin-top: 20px;
+}
+
+.mt-3 {
+    margin-top: 30px;
+}
+
+.mt-5 {
+    margin-top: 50px;
 }
 
 
@@ -62,11 +141,49 @@ figure {
     background-color: #FEF4F4;
 }
 
+.bg-FF1616 {
+    background-color: #FF1616;
+}
+
 
 /* Color styles */
 
 .color-454E6D {
     color: #454E6D;
+}
+
+.color-ffffff {
+    color: #ffffff;
+}
+
+.color-9498A7 {
+    color: #9498A7;
+}
+
+
+/* Sizing styles */
+
+.h-427 {
+    height: 427px;
+}
+
+.h-580 {
+    height: 580px;
+}
+
+.w-282 {
+    width: 282px;
+}
+
+
+/* Font-styles */
+
+.fs-60 {
+    font-size: 60px;
+}
+
+.lh-72 {
+    line-height: 72px;
 }
 
 
@@ -100,11 +217,10 @@ figure {
     font-size: 22px;
     color: #FF1616;
     position: absolute;
-    top: 3px;
+    top: 0;
     right: 10px;
     bottom: 0;
     cursor: pointer;
-    outline: none;
 }
 
 .right-a:hover {
@@ -176,6 +292,7 @@ figure {
     transform-origin: 0 50%;
     transition: all 0.8s ease-out 0s;
     z-index: -1;
+    cursor: pointer;
 }
 
 .sign:hover::before {
@@ -202,6 +319,218 @@ figure {
     transition: all 0.8s ease-out 0s;
 }
 
-.nav li:nth-child(4):hover {
-    background-color: black;
+.hero-sciense {
+    font-size: 14px;
+    line-height: 16px;
+    color: black;
+    border-radius: 35px;
+    background: white;
+    padding: 10px 25px;
+}
+
+.hero-img-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero-button {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CF0F0F;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: all 0.8s ease-out 0s;
+    z-index: -1;
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
+}
+
+.hero-button:hover::before {
+    transform: scale(1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
+}
+
+.hero-slide-icon {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
+    display: block;
+    cursor: pointer;
+}
+
+.w-1120 {
+    width: 1120px;
+}
+
+.nav-dropdown {
+    position: absolute;
+    opacity: 0;
+    background-color: white;
+    display: inline-block;
+    right: 25%;
+    width: 20%;
+    margin-top: 39px;
+    z-index: -1;
+    transition: all 0.8s ease 0s;
+}
+
+.nav-dropdown li {
+    color: #232F55;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav li:nth-child(4):hover .nav-dropdown {
+    transition: all 0.8s ease 0s;
+    z-index: 1;
+    opacity: 1;
+}
+
+.test {
+    position: relative;
+    z-index: 100;
+}
+
+.focus-border {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.focus-border:focus {
+    border: 1px solid white;
+}
+
+.sales-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+}
+
+.sales-img-block {
+    width: 200px;
+    height: 301px;
+}
+
+.sales-book-name {
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 5px;
+}
+
+.fa-star {
+    color: orangered;
+}
+
+.sales-review {
+    font-size: 14px;
+    font-weight: 300;
+    color: #9498A7;
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    font-size: 50px;
+    color: #BBBFCC;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    font-size: 50px;
+    color: #BBBFCC;
+    cursor: pointer;
+}
+
+.week-book-header {
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 42px;
+    color: rgb(26, 26, 26);
+}
+
+.week-view-all {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(26, 26, 26);
+    border-bottom: 2px solid #EEE1E0;
+}
+
+.week-book-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+}
+
+.week-book-author {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    color: rgb(255, 255, 255);
+    display: block;
+}
+
+.view-button {
+    margin-top: 30px;
+    display: inline-block;
+    background-color: #FF1616;
+    padding: 24px 34px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 0px;
+    color: red;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: relative;
+    z-index: 1;
+}
+
+.view-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    transform: scaleY(0);
+    transform-origin: 50% 0%;
+    transition: all 0.8s ease-out 0s;
+    z-index: -1;
+    cursor: pointer;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
+}
+
+.view-button:hover::before {
+    transform: scaleY(1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
 }

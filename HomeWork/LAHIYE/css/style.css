@@ -44,8 +44,8 @@ a {
     margin-left: 45px;
 }
 
-.ml-144 {
-    margin-left: 144px;
+.ml-149 {
+    margin-left: 149px;
 }
 
 .ml-100 {
@@ -73,6 +73,11 @@ h2 {
     position: absolute;
 }
 
+ul {
+    list-style: none;
+    position: absolute;
+}
+
 .p {
     padding: 0px 65px;
     cursor: pointer;
@@ -85,7 +90,8 @@ h2 {
 }
 
 .p-2 {
-    padding: 23px 0;
+    padding: 21px 0;
+    position: relative;
     /* position: fixed;
     width: 100%;
     top: 28px;
@@ -103,8 +109,229 @@ h1 {
     font-size: 16px;
 }
 
+.ull {
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    display: inline-block;
+    z-index: -1;
+    margin-top: 28px;
+    margin-bottom: 0;
+    transition: all 0.5s ease 0s;
+    width: 15%;
+    left: 216px;
+    padding: 0;
+}
+
+.b {
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    display: inline-block;
+    z-index: -1;
+    margin-top: 28px;
+    margin-bottom: 0;
+    transition: all 0.5s ease 0s;
+    width: 15%;
+    padding: 0;
+    right: 248px;
+}
+
+.c {
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    display: inline-block;
+    z-index: -1;
+    margin-top: 28px;
+    margin-bottom: 0;
+    transition: all 0.5s ease 0s;
+    width: 15%;
+    padding: 0;
+    right: 329px;
+}
+
+.ull li {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    color: #232F55;
+}
+
+.b li {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    color: #232F55;
+}
+
+.c li {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    color: #232F55;
+}
+
+.col-9 a:nth-child(2):hover .ull {
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+}
+
+.col-9 a:nth-child(6):hover .b {
+    z-index: 2;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+}
+
+.col-9 a:nth-child(5):hover .c {
+    z-index: 2;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+}
+
+.color-00002A::before {
+    content: '';
+    position: absolute;
+    top: 59%;
+    left: 14%;
+    right: 83%;
+    bottom: 40%;
+    background-color: #207DFF;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: all 0.8s ease-out 0s;
+    z-index: 1;
+}
+
 .color-00002A {
     color: #00002A;
+    z-index: 1;
+}
+
+.color-00002A:hover::before {
+    transform: scale(1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
+}
+
+.A2::before {
+    content: '';
+    position: absolute;
+    top: 59%;
+    left: 21%;
+    right: 72%;
+    bottom: 40%;
+    background-color: #207DFF;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: all 0.8s ease-out 0s;
+    z-index: 1;
+}
+
+.A2 {
+    color: #00002A;
+    z-index: 1;
+}
+
+.A2:hover::before {
+    transform: scale(1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
+}
+
+.A3::before {
+    content: '';
+    position: absolute;
+    top: 59%;
+    left: 32%;
+    right: 63%;
+    bottom: 40%;
+    background-color: #207DFF;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: all 0.8s ease-out 0s;
+    z-index: 1;
+}
+
+.A3 {
+    color: #00002A;
+    z-index: 1;
+}
+
+.A3:hover::before {
+    transform: scale(1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
+}
+
+.A4::before {
+    content: '';
+    position: absolute;
+    top: 59%;
+    left: 41%;
+    right: 52%;
+    bottom: 40%;
+    background-color: #207DFF;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: all 0.8s ease-out 0s;
+    z-index: 1;
+}
+
+.A4 {
+    color: #00002A;
+    z-index: 1;
+}
+
+.A4:hover::before {
+    transform: scale(1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
+}
+
+.A5::before {
+    content: '';
+    position: absolute;
+    top: 59%;
+    left: 52%;
+    right: 44%;
+    bottom: 40%;
+    background-color: #207DFF;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: all 0.8s ease-out 0s;
+    z-index: 1;
+}
+
+.A5 {
+    color: #00002A;
+    z-index: 1;
+}
+
+.A5:hover::before {
+    transform: scale(1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
+}
+
+.A6::before {
+    content: '';
+    position: absolute;
+    top: 59%;
+    left: 60%;
+    right: 34%;
+    bottom: 40%;
+    background-color: #207DFF;
+    transform: scaleX(0);
+    transform-origin: 50% 50%;
+    transition: all 0.8s ease-out 0s;
+    z-index: 1;
+}
+
+.A6 {
+    color: #00002A;
+    z-index: 1;
+}
+
+.A6:hover::before {
+    transform: scale(1);
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
 }
 
 .h-1000 {
@@ -175,7 +402,7 @@ h1 {
     Font-weight: 400;
     Line-height: 21.6px;
     background-color: #E2544C;
-    color: #9b4843;
+    color: white;
     border-radius: 35px;
     height: 50px;
     width: 138px;
@@ -186,6 +413,7 @@ h1 {
 
 .randevu-2:hover {
     background-color: white;
+    color: #FE5F55;
     transition: all 0.1s ease 0s;
 }
 
@@ -233,4 +461,18 @@ h1 {
     width: 55%;
     margin-left: 98px;
     margin-top: 154px;
+}
+
+.sign::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CF0F0F;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: all 0.8s ease-out 0s;
+    z-index: -1;
 }
