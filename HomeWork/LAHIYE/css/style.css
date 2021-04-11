@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    max-width: 1349px;
 }
 
 .row1 {
@@ -72,7 +73,7 @@ a {
     color: red
 }
 
-h2 {
+.once {
     margin: 0;
     padding: 70px 0 0 0;
     font-size: 55px;
@@ -89,7 +90,7 @@ ul {
     position: absolute;
 }
 
-.p {
+.p-1 {
     padding: 0px 65px;
     cursor: pointer;
 }
@@ -99,7 +100,7 @@ ul {
     position: relative;
 }
 
-h1 {
+.Medi {
     margin: 0;
     margin-left: 55px;
 }
@@ -122,7 +123,7 @@ h1 {
     padding: 0;
 }
 
-.b {
+.ull3 {
     position: absolute;
     background-color: white;
     opacity: 0;
@@ -136,7 +137,7 @@ h1 {
     right: 248px;
 }
 
-.c {
+.ull2 {
     position: absolute;
     background-color: white;
     opacity: 0;
@@ -157,14 +158,14 @@ h1 {
     color: #232F55;
 }
 
-.b li {
+.ull3 li {
     font-size: 14px;
     font-weight: 500;
     padding: 10px 15px;
     color: #232F55;
 }
 
-.c li {
+.ull2 li {
     font-size: 14px;
     font-weight: 500;
     padding: 10px 15px;
@@ -177,13 +178,13 @@ h1 {
     transition: all 0.5s ease 0s;
 }
 
-.col-9 a:nth-child(6):hover .b {
+.col-9 a:nth-child(6):hover .ull3 {
     z-index: 2;
     opacity: 1;
     transition: all 0.5s ease 0s;
 }
 
-.col-9 a:nth-child(5):hover .c {
+.col-9 a:nth-child(5):hover .ull2 {
     z-index: 2;
     opacity: 1;
     transition: all 0.5s ease 0s;
@@ -683,10 +684,21 @@ h1 {
     margin-right: -5px;
     text-align: center;
     cursor: pointer;
+    background-color: white;
 }
 
 .whb:hover {
-    background-color: #20A5FF;
+    background-color: #207DFF;
+    transition: all 1s ease 0s;
+}
+
+.whb:hover .ico2 {
+    color: white;
+    transition: all 1s ease 0s;
+}
+
+.whb:hover h3 {
+    color: white;
     transition: all 1s ease 0s;
 }
 
@@ -705,22 +717,13 @@ h1 {
     margin-top: 30px;
 }
 
-.ico2:hover {
-    color: white;
-    transition: all 1s ease 0s;
-}
-
 .ff-Poppins {
     font-family: Poppins, Arial, sans-serif;
     Font-size: 24px;
     Font-weight: 400;
     Line-height: 36px;
     margin: 15px auto;
-}
-
-.ff-Poppins:hover {
-    color: white;
-    transition: all 1s ease 0s;
+    color: black;
 }
 
 .mwh {
@@ -731,4 +734,482 @@ h1 {
     font-weight: 400;
     line-height: 1.8;
     color: #999999;
+}
+
+.h-327 {
+    height: 327px;
+}
+
+.ta-center {
+    text-align: center;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 52.8px;
+    margin-top: 120px;
+}
+
+.m-auto {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    height: 55px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #999999;
+}
+
+.wh-2 {
+    width: 25%;
+    height: 660px;
+}
+
+.img-5 {
+    width: 291px;
+    height: 300px;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.ml-48 {
+    margin-left: 48px;
+}
+
+.ml-16 {
+    margin-left: -16px;
+}
+
+.ml-17 {
+    margin-left: -17px;
+}
+
+.mt-13 {
+    margin-top: 13px;
+}
+
+.Lloyd {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    margin-left: 45px;
+}
+
+.wh-2:hover .Lloyd {
+    color: rgb(32, 125, 255);
+}
+
+.wh-2:hover .smith {
+    color: rgb(32, 125, 255);
+}
+
+.wh-2:hover .alicia {
+    color: rgb(32, 125, 255);
+}
+
+.smith {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    margin-left: 90px;
+}
+
+.alicia {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    margin-left: 30px;
+}
+
+.norol {
+    font-family: Poppins, Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 21.6px;
+    color: rgb(32, 125, 255);
+    margin-left: 27%;
+}
+
+.disd {
+    font-family: Poppins, Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 21.6px;
+    color: rgb(32, 125, 255);
+    margin-left: 27%;
+}
+
+.cocuk {
+    font-family: Poppins, Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 21.6px;
+    color: rgb(32, 125, 255);
+    margin-left: 22%;
+}
+
+.hirs {
+    text-align: center;
+    width: 70%;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #999999;
+    margin-left: 25px;
+}
+
+.simdi {
+    Font-size: 16px;
+    Font-weight: 400;
+    Line-height: 24px;
+    background-color: #207DFE;
+    color: white;
+    border-radius: 35px;
+    height: 39px;
+    width: 206px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-left: 12%;
+}
+
+.bgimg-url1 {
+    background-image: url(../img/bg_3.jpg);
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: 0.8;
+    background: #207dff;
+}
+
+.eglen {
+    position: absolute;
+    font-family: Poppins, Arial, sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 21.6px;
+    margin-left: 120px;
+    margin-top: 161px;
+    letter-spacing: 2px;
+}
+
+.fazla {
+    position: absolute;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 52.8px;
+    color: rgb(255, 255, 255);
+    width: 25%;
+    margin-left: 120px;
+    margin-top: 205px;
+}
+
+.randevu-3 {
+    position: absolute;
+    Font-size: 18px;
+    Font-weight: 400;
+    Line-height: 21.6px;
+    background-color: #E2544C;
+    color: white;
+    border-radius: 35px;
+    height: 57px;
+    width: 135px;
+    cursor: pointer;
+    border: 1px solid #E2544C;
+    outline: none;
+    margin-left: 120px;
+    margin-top: 390px;
+}
+
+.randevu-3:hover {
+    background-color: #418CF4;
+    color: #FE5F55;
+    transition: all 0.1s ease 0s;
+}
+
+.h30 {
+    margin-top: 165px;
+    position: absolute;
+    margin-left: 54%;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 79.2px;
+    color: white;
+}
+
+.h4500 {
+    margin-top: 165px;
+    position: absolute;
+    margin-left: 75%;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 79.2px;
+    color: white;
+}
+
+.h84 {
+    margin-top: 315px;
+    position: absolute;
+    margin-left: 54%;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 79.2px;
+    color: white;
+}
+
+.h300 {
+    margin-top: 315px;
+    position: absolute;
+    margin-left: 76%;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 79.2px;
+    color: white;
+}
+
+.yil {
+    margin-top: 250px;
+    position: absolute;
+    margin-left: 51%;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28.8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mut {
+    margin-top: 250px;
+    position: absolute;
+    margin-left: 75%;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28.8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dok {
+    margin-top: 395px;
+    position: absolute;
+    margin-left: 52%;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28.8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.person {
+    margin-top: 395px;
+    position: absolute;
+    margin-left: 75%;
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28.8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.uzun {
+    border: 1px solid #6094E5;
+    width: 48%;
+    margin-top: 22%;
+    margin-left: 43%;
+    position: absolute;
+}
+
+.duz {
+    border: 1px solid #6094E5;
+    height: 53%;
+    margin-top: 11%;
+    margin-left: 69%;
+    position: absolute;
+}
+
+.h-320 {
+    height: 320px;
+    display: inline-block;
+}
+
+.her {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 52.8px;
+    color: rgba(0, 0, 0, 0.9);
+    margin-top: 135px;
+    margin-left: 329px;
+}
+
+.cok {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 30.6px;
+    color: rgb(153, 153, 153);
+    text-align: center;
+    margin-top: -12px;
+}
+
+.fig-6 {
+    height: 265px;
+    margin: 0;
+    margin-top: 34px;
+}
+
+.img-6 {
+    height: 250px;
+    width: 349px;
+    object-fit: cover;
+}
+
+.h-325 {
+    height: 325px;
+}
+
+.h-480 {
+    height: 480px;
+}
+
+.ml-121 {
+    margin-left: 121px;
+}
+
+.ml-26 {
+    margin-left: 26px;
+}
+
+.nisan {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 21.6px;
+    color: #Fd5F55;
+    cursor: pointer;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.nisan:hover {
+    color: black;
+    transition: all 1s ease 0s;
+}
+
+.m-18 {
+    font-family: Poppins, Arial, sans-serif;
+    margin-top: 17px;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 21.6px;
+    color: #Fd5F55;
+    cursor: pointer;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.m-18:hover {
+    color: black;
+    transition: all 1s ease 0s;
+}
+
+.yon {
+    font-family: Poppins, Arial, sans-serif;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 21.6px;
+    color: #FD5F55;
+    cursor: pointer;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.yon:hover {
+    color: black;
+    transition: all 1s ease 0s;
+}
+
+.ml-8 {
+    font-family: Poppins, Arial, sans-serif;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 21.6px;
+    color: #Fd5F55;
+    cursor: pointer;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.ml-8:hover {
+    color: black;
+    transition: all 1s ease 0s;
+}
+
+.ml-71 {
+    margin-left: -71px;
+}
+
+.yeter {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 33px;
+    color: black;
+    width: 100%;
+}
+
+.yeter:hover {
+    transition: all 0.5s ease 0s;
+    color: #207DFE;
+}
+
+.uzak {
+    font-family: Poppins, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30.6px;
+    color: rgb(153, 153, 153);
+}
+
+.devam {
+    Font-size: 18px;
+    Font-weight: 400;
+    Line-height: 21.6px;
+    background-color: #207DFE;
+    color: white;
+    border-radius: 35px;
+    height: 40px;
+    width: 140px;
+    cursor: pointer;
+    border: 1px solid #207DFE;
+    outline: none;
 }
