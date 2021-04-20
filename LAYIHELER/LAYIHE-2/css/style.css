@@ -114,38 +114,11 @@ ul {
     z-index: -1;
     margin-top: 28px;
     margin-bottom: 0;
+    margin-left: 37px;
     transition: all 0.5s ease 0s;
     width: 15%;
     left: 216px;
     padding: 0;
-}
-
-.ull3 {
-    position: absolute;
-    background-color: white;
-    opacity: 0;
-    display: inline-block;
-    z-index: -1;
-    margin-top: 28px;
-    margin-bottom: 0;
-    transition: all 0.5s ease 0s;
-    width: 15%;
-    padding: 0;
-    right: 248px;
-}
-
-.ull2 {
-    position: absolute;
-    background-color: white;
-    opacity: 0;
-    display: inline-block;
-    z-index: -1;
-    margin-top: 28px;
-    margin-bottom: 0;
-    transition: all 0.5s ease 0s;
-    width: 15%;
-    padding: 0;
-    right: 329px;
 }
 
 .ull li {
@@ -155,34 +128,8 @@ ul {
     color: #232F55;
 }
 
-.ull3 li {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 15px;
-    color: #232F55;
-}
-
-.ull2 li {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 15px;
-    color: #232F55;
-}
-
 .col-9 a:nth-child(2):hover .ull {
     z-index: 1;
-    opacity: 1;
-    transition: all 0.5s ease 0s;
-}
-
-.col-9 a:nth-child(6):hover .ull3 {
-    z-index: 2;
-    opacity: 1;
-    transition: all 0.5s ease 0s;
-}
-
-.col-9 a:nth-child(5):hover .ull2 {
-    z-index: 2;
     opacity: 1;
     transition: all 0.5s ease 0s;
 }
@@ -340,8 +287,8 @@ ul {
     Font-weight: 400;
     Line-height: 21.6px;
     background-color: #FE5F55;
-    margin-left: 40px;
     color: white;
+    margin-left: 22px;
     border-radius: 8px;
     height: 40px;
     width: 130px;
@@ -387,8 +334,7 @@ ul {
 
 .wh {
     width: 100%;
-    height: 2400px;
-    margin-left: 120px;
+    height: 4770px;
 }
 
 .bir {
@@ -458,7 +404,7 @@ ul {
 .ipsum {
     font-family: "Open Sans", sans-serif;
     width: 70%;
-    margin-left: 190px;
+    margin-left: 285px;
     margin-top: -135px;
     Font-size: 18px;
     Font-weight: 400;
@@ -487,7 +433,7 @@ ul {
     Font-weight: 400;
     Line-height: 30px;
     margin-top: -60px;
-    margin-left: 80px;
+    margin-left: 200px;
 }
 
 .nisan {
@@ -496,7 +442,7 @@ ul {
     Font-weight: 400;
     Line-height: 23.4px;
     color: #CFD3DD;
-    margin-left: 80px;
+    margin-left: 200px;
     letter-spacing: 2px;
 }
 
@@ -538,17 +484,17 @@ ul {
 
 .reply2 {
     cursor: pointer;
-    margin-left: 120px;
+    margin-left: 160px;
 }
 
 .reply3 {
     cursor: pointer;
-    margin-left: 160px;
+    margin-left: 200px;
 }
 
 .reply4 {
     cursor: pointer;
-    margin-left: 200px;
+    margin-left: 240px;
 }
 
 .reply:hover {
@@ -573,6 +519,7 @@ ul {
     font-weight: 400;
     line-height: 42px;
     margin-left: 121px;
+    margin-top: 90px;
 }
 
 .p-30 {
@@ -596,6 +543,10 @@ ul {
     width: 457px;
     height: 282px;
     margin-bottom: 15px;
+}
+
+.dflex {
+    display: flex;
 }
 
 .input4 {
@@ -710,7 +661,6 @@ ul {
 
 .ml-120 {
     margin-left: 120px;
-    display: flex;
 }
 
 .disinline {
@@ -822,4 +772,10 @@ ul {
     margin-left: 5px;
     margin-top: 18px;
     margin-right: 5px;
+}
+
+.wh-3 {
+    width: 299px;
+    height: 72px;
+    background-color: #F2F2F2;
 }

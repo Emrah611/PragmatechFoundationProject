@@ -90,6 +90,10 @@
         position: absolute;
     }
     
+    .ml-18 {
+        margin-left: -18px;
+    }
+    
     .p-1 {
         padding: 0px 65px;
         cursor: pointer;
@@ -123,49 +127,7 @@
         padding: 0;
     }
     
-    .ull3 {
-        position: absolute;
-        background-color: white;
-        opacity: 0;
-        display: inline-block;
-        z-index: -1;
-        margin-top: 28px;
-        margin-bottom: 0;
-        transition: all 0.5s ease 0s;
-        width: 15%;
-        padding: 0;
-        right: 248px;
-    }
-    
-    .ull2 {
-        position: absolute;
-        background-color: white;
-        opacity: 0;
-        display: inline-block;
-        z-index: -1;
-        margin-top: 28px;
-        margin-bottom: 0;
-        transition: all 0.5s ease 0s;
-        width: 15%;
-        padding: 0;
-        right: 329px;
-    }
-    
     .ull li {
-        font-size: 14px;
-        font-weight: 500;
-        padding: 10px 15px;
-        color: #232F55;
-    }
-    
-    .ull3 li {
-        font-size: 14px;
-        font-weight: 500;
-        padding: 10px 15px;
-        color: #232F55;
-    }
-    
-    .ull2 li {
         font-size: 14px;
         font-weight: 500;
         padding: 10px 15px;
@@ -174,18 +136,6 @@
     
     .col-9 a:nth-child(2):hover .ull {
         z-index: 1;
-        opacity: 1;
-        transition: all 0.5s ease 0s;
-    }
-    
-    .col-9 a:nth-child(6):hover .ull3 {
-        z-index: 2;
-        opacity: 1;
-        transition: all 0.5s ease 0s;
-    }
-    
-    .col-9 a:nth-child(5):hover .ull2 {
-        z-index: 2;
         opacity: 1;
         transition: all 0.5s ease 0s;
     }
@@ -1544,11 +1494,15 @@
         width: 555px;
     }
     
+    .ml-40 {
+        margin-left: 40px;
+    }
+    
     .input3 {
         display: block;
         border: 1px solid #D8D8D8;
         padding: 15px 100px 15px 15px;
-        margin-top: 16px;
+        margin-top: 15px;
         outline: none;
         width: 457px;
     }

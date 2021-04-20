@@ -44,12 +44,7 @@
 //     event.target.classList.add('bomba-oglan')
 // })
 
-let con = document.createElement('section');
-con.classList.add('container')
-console.log(con)
-
-for (let i = 0; i < 5; i++) {
-    let block = document.createElement('div')
-    block.classList.add('block')
-    console.log(block)
+for (i = 1; i < 100; i++) {
+    if (100 % i == 0);
+    console.log(i)
 }
