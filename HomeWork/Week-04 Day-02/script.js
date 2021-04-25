@@ -1,50 +1,43 @@
-// let block = document.createElement('div');
+let block = document.createElement('div');
 
-// block.classList.add('main');
-// document.querySelector('.container').appendChild(block);
-
-
-// block.setAttribute('style', "width:200px; height:100px; background-color:orange; margin:0 auto;");
+block.classList.add('main');
+document.querySelector('.container').appendChild(block);
 
 
-// let blo = document.children('div*4')
+block.setAttribute('style', "width:200px; height:100px; background-color:orange; margin:0 auto;");
 
-//  
 
-// console.log(li.parentElement)
-// console.log(li.nextElementSibling)
-// let ul = document.querySelector('ul');
-// console.log(ul)
-// console.log(ul.children)
-// console.log(ul.firstElementChild);
-// console.log(ul.lastElementChild);
-// console.log(li.hasChildNodes())
+let blo = document.children('div*4')
 
-// let block = document.createElement('div');
-// block.classList.add('main')
+console.log(li.parentElement)
+console.log(li.nextElementSibling)
+let ul = document.querySelector('ul');
+console.log(ul)
+console.log(ul.children)
+console.log(ul.firstElementChild);
+console.log(ul.lastElementChild);
+console.log(li.hasChildNodes())
 
-// for (let i = 0; i < 3; i++) {
-//     let miniblock = document.createElement('div');
-//     miniblock.classList.add('miniblock');
-//     block.appendChild(miniblock);
-// }
+let block = document.createElement('div');
+block.classList.add('main')
 
-// document.querySelector('.container').appendChild(block);
-
-// block.style.backgroundColor = 'red'
-// block.setAttribute('style', "width:200px;height:100px;background-color:purple;margin:0 auto;display:flex;")
-
-// console.log(block.getAttribute('class'))
-// block.onclick = function(event) {
-//     console.log(event.target)
-// }
-
-// block.addEventListener('class', (event) => {
-//     console.log(event.target)
-//     event.target.classList.add('bomba-oglan')
-// })
-
-for (i = 1; i < 100; i++) {
-    if (100 % i == 0);
-    console.log(i)
+for (let i = 0; i < 3; i++) {
+    let miniblock = document.createElement('div');
+    miniblock.classList.add('miniblock');
+    block.appendChild(miniblock);
 }
+
+document.querySelector('.container').appendChild(block);
+
+block.style.backgroundColor = 'red'
+block.setAttribute('style', "width:200px;height:100px;background-color:purple;margin:0 auto;display:flex;")
+
+console.log(block.getAttribute('class'))
+block.onclick = function(event) {
+    console.log(event.target)
+}
+
+block.addEventListener('class', (event) => {
+    console.log(event.target)
+    event.target.classList.add('bomba-oglan')
+})
