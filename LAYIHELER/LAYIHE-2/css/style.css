@@ -106,41 +106,13 @@ ul {
     font-size: 16px;
 }
 
-.ull {
-    position: absolute;
-    background-color: white;
-    opacity: 0;
-    display: inline-block;
-    z-index: -1;
-    margin-top: 28px;
-    margin-bottom: 0;
-    margin-left: 37px;
-    transition: all 0.5s ease 0s;
-    width: 15%;
-    left: 216px;
-    padding: 0;
-}
-
-.ull li {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 15px;
-    color: #232F55;
-}
-
-.col-9 a:nth-child(2):hover .ull {
-    z-index: 1;
-    opacity: 1;
-    transition: all 0.5s ease 0s;
-}
-
-.color-00002A::before {
+.A1::before {
     content: '';
     position: absolute;
-    top: 59%;
+    top: 64%;
     left: 19%;
     right: 78%;
-    bottom: 40%;
+    bottom: 35%;
     background-color: #207DFF;
     transform: scaleX(0);
     transform-origin: 50% 50%;
@@ -148,12 +120,12 @@ ul {
     z-index: 1;
 }
 
-.color-00002A {
+.A1 {
     color: #00002A;
     z-index: 1;
 }
 
-.color-00002A:hover::before {
+.A1:hover::before {
     transform: scale(1);
     transition-timing-function: cubic-bezier(0.5, 1.6, 0.3, 0.6);
 }
@@ -161,10 +133,10 @@ ul {
 .A2::before {
     content: '';
     position: absolute;
-    top: 59%;
-    left: 25%;
-    right: 66%;
-    bottom: 40%;
+    top: 64%;
+    left: 26%;
+    right: 67%;
+    bottom: 35%;
     background-color: #207DFF;
     transform: scaleX(0);
     transform-origin: 50% 50%;
@@ -185,10 +157,10 @@ ul {
 .A3::before {
     content: '';
     position: absolute;
-    top: 59%;
-    left: 36%;
-    right: 57%;
-    bottom: 40%;
+    top: 64%;
+    left: 37%;
+    right: 58%;
+    bottom: 35%;
     background-color: #207DFF;
     transform: scaleX(0);
     transform-origin: 50% 50%;
@@ -209,10 +181,10 @@ ul {
 .A4::before {
     content: '';
     position: absolute;
-    top: 59%;
+    top: 64%;
     left: 46%;
     right: 47%;
-    bottom: 40%;
+    bottom: 35%;
     background-color: #207DFF;
     transform: scaleX(0);
     transform-origin: 50% 50%;
@@ -233,10 +205,10 @@ ul {
 .A5::before {
     content: '';
     position: absolute;
-    top: 59%;
+    top: 64%;
     left: 57%;
     right: 39%;
-    bottom: 40%;
+    bottom: 35%;
     background-color: #207DFF;
     transform: scaleX(0);
     transform-origin: 50% 50%;
@@ -257,10 +229,10 @@ ul {
 .A6::before {
     content: '';
     position: absolute;
-    top: 59%;
+    top: 64%;
     left: 65%;
     right: 29%;
-    bottom: 40%;
+    bottom: 35%;
     background-color: #207DFF;
     transform: scaleX(0);
     transform-origin: 50% 50%;

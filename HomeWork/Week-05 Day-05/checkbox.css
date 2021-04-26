@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    width: 100px;
+    height: 40px;
+    appearance: none;
+    bottom: none;
+    outline: none;
+    background-color: lightgrey;
+    border-radius: 20px;
+    position: relative;
+}
+
+input::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+input:checked {
+    background-color: teal;
+}
+
+input:checked::before {
+    left: 65px;
+}
+
+input:not(:checked)::before {
+    right: 50px;
+    transition: .2s;
+}
