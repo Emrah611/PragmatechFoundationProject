@@ -97,9 +97,21 @@ ul {
     position: relative;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#navbar {
+    overflow: hidden;
+    z-index: 1;
+}
+
 .medi {
     margin: 0;
     margin-left: 55px;
+    font-size: 24px;
 }
 
 .fs {
