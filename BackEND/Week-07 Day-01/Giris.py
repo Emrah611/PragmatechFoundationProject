@@ -87,19 +87,19 @@
 # print('login form ', end='') #Netice = login form form (yeni yan yana dusur)
 # print('form')
 
-ad = input('Adi: ')
-parol = input('Parol: ')
-user_password = '12345'
-admin_password1 = 'admin'
-admin_password2 = 'admin2'
+# ad = input('Adi: ')
+# parol = input('Parol: ')
+# user_password = '12345'
+# admin_password1 = 'admin'
+# admin_password2 = 'admin2'
 
-if parol == user_password:
-    print('Logged in')
+# if parol == user_password:
+#     print('Logged in')
 
-elif parol == admin_password1:
-    print('Admin Logged in')
-elif parol == 'admin2':
-    print('Admin2 Logged in')
+# elif parol == admin_password1:
+#     print('Admin Logged in')
+# elif parol == 'admin2':
+#     print('Admin2 Logged in')
 
-else:
-    print('Password is wrong !! ')
+# else:
+#     print('Password is wrong !! ')
