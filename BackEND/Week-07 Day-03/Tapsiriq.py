@@ -1,11 +1,13 @@
 #1
 my_list = [1,5,9,4,5,0,3,6,8,2,7]
 toplam = 0
-
 for x in my_list:
     toplam = x + toplam
 
 print(toplam)
+
+# toplam = sum(my_list)
+# print(toplam)
 
 #2
 my_list = [17,39,54,26,70]
