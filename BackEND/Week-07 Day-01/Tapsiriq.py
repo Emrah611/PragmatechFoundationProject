@@ -17,8 +17,9 @@ print(x ** y)
 print(y ** x)
 
 #4 
-x = int("26")    #?????????
-print(type(x))
+x = '4.92'
+y = int(float(x))
+print(y)
 
 #5
 
@@ -42,6 +43,3 @@ x = 'Necesen '
 y = 'Mamed'
 z = x + y
 print(z)
-
-#8
-#???????????
