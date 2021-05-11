@@ -58,3 +58,6 @@
 #         my_text += item
 #     return my_text
 # print(func(nname = 'Ali ', surname = 'Aliyev'))
+
+
+#x = list(map(int, input().split()))
