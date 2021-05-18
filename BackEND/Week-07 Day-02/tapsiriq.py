@@ -25,18 +25,13 @@ print(z)
 #4
 x = int(input('Eded daxil edin: '))
 y = int(input('Ikinci ededi daxil edin: '))
-
 c = input('Riyazi emel daxil edin: ')
-
 if c == '+':
     print(x + y)
-
 elif c == '-':
     print(x - y)
-
 elif c == '*':
     print(x * y)
-
 elif c == '/':
     print(x / y) 
 
