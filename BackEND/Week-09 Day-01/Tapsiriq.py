@@ -12,7 +12,7 @@ print(w1.name)
 print(w2.surname)
 
 class Work2:
-
+    
     def __init__(self,name,surname):
         self.name = name
         self.surname = surname
