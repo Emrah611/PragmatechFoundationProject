@@ -4,11 +4,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('html1/index1.html')
+    return render_template('med1.html')
 
-@app.route('/MGC')
-def func():
-    return render_template('html2/index2.html')
+@app.route('/medical')
+def medical():
+    return render_template('med2.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
