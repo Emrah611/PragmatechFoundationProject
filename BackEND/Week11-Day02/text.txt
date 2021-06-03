@@ -1,0 +1,62 @@
+(.env) PS C:\PragmatecFoundationProject\BackEND\Week11-Day02> python
+Python 3.9.5 (tags/v3.9.5:0a7dcbd, May  3 2021, 17:27:52) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from app import db
+C:\PragmatecFoundationProject\BackEND\.env\lib\site-packages\flask_sqlalchemy\__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+>>> db.create_all()
+>>> from app import Customer
+>>> customer1 = Customer(name='Ali',email='ali@ml.ru',age=21)
+>>> customer1.name
+'Ali'
+>>> db.session.add(customer1)
+>>> db.session.commit()
+>>> customer1.id
+1
+>>> customer1.orders
+[]
+>>> from app import Order
+>>> order1 = Order(title ='IPad',short_description = 'Short_Info',
+... description = 'Description',customer_id = customer1.id)
+>>> customer1.orders
+[]
+>>> order1.title
+'IPad'
+>>> order1.title
+'IPad'
+>>> customer1.orders
+[]
+>>> order2.title
+'Iphone'
+>>> order2.short_description
+'short-desc'
+>>> order2.description
+'descrip'
+>>> order2.image
+'iphone.png'
+>>> order2
+Order Iphone
+>>> order1
+Order IPad
+>>> order2 = Order(title = 'Iphone',short_description='short-desc',description = 'descrip',image='iphone.png',customer_id=customer1.id)
+>>> db.session.add(order2)
+>>> db.session.commit()
+>>> db.session.add(order1)
+>>> db.session.commit()
+>>> x = order1.owner
+>>> x.id
+1
+>>> order1.owner
+Customer Ali
+>>> customer1.orders
+[Order Iphone, Order IPad]
+>>> for order in customer1.orders:
+...     order.image
+...
+'iphone.png'
+'image.png'
+>>> for order in customer1.orders:
+...     order.id
+...
+1
+2
