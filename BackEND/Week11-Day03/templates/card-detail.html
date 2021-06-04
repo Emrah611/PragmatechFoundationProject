@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<div class="card d-flex" style="width: 18rem;">
+    <img src="static/uploads/{{ card.image }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{card.title}}</h5>
+        <h5 class="card-title">Price: {{card.price}}</h5>
+        <p class="card-text">{{card.short_description}}</p>
+        <a href="/card/{{card.id}}" class="btn btn-primary">See More</a>
+    </div>
+</div>
+
+<form action="" method="POST">
+    <div class="form-outline">
+        <label class="form-label" for="typeText">Comment by user:</label>
+        <textarea name='context' class="form-control"></textarea>
+    </div>
+    <input type="submit" value="Post">
+</form>
+<br><br>
+
+<p>Comments:</p>
+<br> {% for comment in comments %}
+<p>{{comment.context}}</p>
+{% endfor %} {% endblock %}

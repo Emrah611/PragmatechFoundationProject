@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<br>
+<hr>
+<hr> {% for customer in customers %}
+<div class="card d-flex" style="width: 18rem;">
+    <img src="static/uploads/{{ customer.image }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Name: {{customer.name}}</h5>
+        <h5 class="card-title">Email: {{customer.email}}</h5>
+        <p class="card-text">Age: {{customer.age}}</p>
+        <a href="#" class="btn btn-primary">See More</a>
+    </div>
+</div>
+{% endfor %}
+<br>
+<hr> {% endblock %}
