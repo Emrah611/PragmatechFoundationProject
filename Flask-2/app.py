@@ -8,6 +8,7 @@ UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'static/uploads/')
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['SECRET KEY'] = 'you-will-never-guess'
 db = SQLAlchemy(app)
 # from image_upload import save_picture
 
