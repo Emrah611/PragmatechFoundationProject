@@ -22,7 +22,7 @@ class Customer(db.Model):
     def __repr__(self):
         return f'Customer {self.name}'
 
-@app.route('/admin/customer-add', methods=['GET', 'POST'])
+@app.route('/admin/customer', methods=['GET', 'POST'])
 def customer_add():
     if request.method == 'POST':
         file = request.files['file']
@@ -43,7 +43,7 @@ def customer_add():
 def admin():
     return render_template("admin/admin.html")
 
-@app.route('/admin/customer-edit')
+@app.route('/admin/customer-edit') 
 def customer_edit():
     customers = Customer.query.all()
     return render_template('admin/customer-edit.html', customers=customers)
