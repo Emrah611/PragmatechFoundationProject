@@ -177,9 +177,14 @@
                         <p class="mwh">Çok uzakta, dağ kelimesinin arkasında</p>
                     </div>
                     <div class="whb">
-                        <i class="fas fa-stethoscope ico2"></i>
-                        <h3 class="ff-Poppins">Kardiyoloji</h3>
-                        <p class="mwh">Çok uzakta, dağ kelimesinin arkasında</p>
+                        <i class="fas fa-stethoscope ico2"></i> {% for profession in professions%}
+                        <h3 class="ff-Poppins">
+                            <td>{{profession.specialty}}</td>
+                        </h3>
+                        <p class="mwh">
+                            <td>{{profession.description}}</td>
+                        </p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

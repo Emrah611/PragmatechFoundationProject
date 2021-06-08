@@ -1,0 +1,17 @@
+{% extends 'admin/base.html' %} {% block content %}
+
+<form action="" method="POST">
+    <div class="form-group">
+        <label>Specialty</label>
+        <input type="text" class="form-control" name="specialty">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" name='description'></textarea>
+    </div>
+    <div class="form-group">
+        <a href="{{url_for('profession_list')}}"><button class="btn btn-primary" type="submit">Update Blog
+        </button></a>
+    </div>
+</form>
+</div> {% endblock %}
