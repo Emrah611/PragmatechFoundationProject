@@ -98,16 +98,21 @@
                     </div>
                 </div>
                 <div class="col-4 m-ops">
-                    <span class="ucret">ÜCRETSİZ DANIŞMA</span>
-                    <form action="#">
-                        <input type="#" id="isim" placeholder="Ad" class="input m-t25">
-                        <input type="#" id="soy isim" placeholder="Soyad" class="input">
-                        <input type="#" id="isim" placeholder="Hizmetlerinizi Seçin" class="input">
-                        <input type="#" id="isim" placeholder="Telefon" class="input">
-                        <input type="#" id="isim" placeholder="Tarih" class="input">
-                        <input type="#" id="isim" placeholder="Zaman" class="input">
-                        <input type="#" id="isim" placeholder="İleti" class="input">
-                        <button class="input2">Randevu</button>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <span class="ucret">ÜCRETSİZ DANIŞMA</span>
+                        <input type="text" name="name" placeholder="Ad" class="input form-control m-t25">
+                        <input type="text" name="surname" placeholder="Soyad" class="input form-control">
+                        <input type="email" name="email" placeholder="Email" class="input form-control">
+                        <input type="text" name="date-time" placeholder="Vaxt" class="input form-control">
+                        <textarea type="description" name="description" placeholder="Melumat" class="input form-control"></textarea>
+                        <input type="age" name="age" placeholder="Yaş" class="input form-control">
+                        <input type="" name="phone" placeholder="Telefon" class="input form-control">
+                        <div class="form-group">
+                            <input type="file" class="form-control mt-16" name="file">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success float-right input2">Randevu</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -166,7 +171,7 @@
                         <h3 class="ff-Poppins">Röntgen</h3>
                         <p class="mwh">Çok uzakta, dağ kelimesinin arkasında</p>
                     </div>
-                    <div class="whb">
+                    <!--    <div class="whb">
                         <i class="fas fa-stethoscope ico2"></i>
                         <h3 class="ff-Poppins">Diş</h3>
                         <p class="mwh">Çok uzakta, dağ kelimesinin arkasında</p>
@@ -175,17 +180,18 @@
                         <i class="fas fa-stethoscope ico2"></i>
                         <h3 class="ff-Poppins">Travmatoloji</h3>
                         <p class="mwh">Çok uzakta, dağ kelimesinin arkasında</p>
-                    </div>
+                    </div> -->
+                    {% for profession in professions%}
                     <div class="whb">
-                        <i class="fas fa-stethoscope ico2"></i> {% for profession in professions%}
+                        <i class="fas fa-stethoscope ico2"></i>
                         <h3 class="ff-Poppins">
                             <td>{{profession.specialty}}</td>
                         </h3>
                         <p class="mwh">
                             <td>{{profession.description}}</td>
                         </p>
-                        {% endfor %}
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -217,8 +223,7 @@
                     <h3 class="Lloyd">Dr. Lloyd Wilson</h3>
                     <h5 class="norol">NÖROLOG</h5>
                     <p class="hirs">Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım.</p>
-                    <button class="simdi">Şimdi Rezervasyon Yap</button>
-
+                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a>
                 </div>
                 <div class="col-3 wh-2 ml-16">
                     <figure class="m-0">
@@ -233,7 +238,7 @@
                     <h3 class="Lloyd">Dr. Rachel Parker</h3>
                     <h5 class="norol">GÖZ DOKTORU</h5>
                     <p class="hirs">Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım.</p>
-                    <button class="simdi">Şimdi Rezervasyon Yap</button>
+                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a>
                 </div>
                 <div class="col-3 wh-2 ml-17">
                     <figure class="m-0">
@@ -248,7 +253,7 @@
                     <h3 class="smith">Ian Smith</h3>
                     <h5 class="disd">DİŞ DOKTORU</h5>
                     <p class="hirs">Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım.</p>
-                    <button class="simdi">Şimdi Rezervasyon Yap</button>
+                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a>
                 </div>
                 <div class="col-3 wh-2 ml-16">
                     <figure class="m-0">
@@ -263,7 +268,7 @@
                     <h3 class="alicia">Dr. Alicia Henderson</h3>
                     <h5 class="cocuk">ÇOCUK DOKTORU</h5>
                     <p class="hirs">Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım.</p>
-                    <button class="simdi">Şimdi Rezervasyon Yap</button>
+                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a>
                 </div>
             </div>
         </div>
@@ -276,7 +281,7 @@
                     <div>
                         <h5 class="eglen">EĞLENCELİ GERÇEKLER</h5>
                         <h2 class="fazla">5.100'den fazla hasta bize güveniyor</h2>
-                        <button class="randevu-3">Randevu Al</button>
+                        <a href="{{url_for('randevu')}}"><button class="randevu-3">Randevu Al</button></a>
                         <h2 class="h30">30</h2>
                         <h2 class="h4500">4500</h2>
                         <h2 class="h84">84</h2>
@@ -401,13 +406,13 @@
                         <p class="ml-8">3</p>
                         <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
                         <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
-                        <a href={{url_for( 'medical')}}> <button class="devam">Devamını oku</button></a>
+                        <a href="{{url_for('medical')}}"><button class="devam">Devamını oku</button></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section>
+    <!-- <section>
         <div class="container">
             <div class="row">
                 <div class="col-12 bgimg-url2">
@@ -445,7 +450,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <section id="Iletişim">
         <div class="row">
             <div class="col-12 h-315">
@@ -501,13 +506,13 @@
                 </div>
                 <div class="col-6 h-670">
                     <div class="h-550">
-                        <form action="#" class="ml-40">
+                        <!-- <form action="#" class="ml-40">
                             <input type="#" id="isim" placeholder="İsim" class="input3 m-t25">
                             <input type="#" id="soy isim" placeholder="Soyad" class="input3">
                             <input type="#" id="isim" placeholder="Konu" class="input3">
                             <input type="#" id="isim" placeholder="İleti" class="input33">
                             <button class="input4">Mesaj Gönder</button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </div>

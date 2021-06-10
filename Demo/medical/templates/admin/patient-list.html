@@ -1,0 +1,43 @@
+{% extends 'admin/base.html' %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Manage Blogs <a href="{{url_for('patient_add')}}"><button type="button"  class="btn btn-success float-right" data-toggle="modal">Add New Blog</button></a></h2>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">NAME</th>
+                            <th scope="col">SURNAME</th>
+                            <th scope="col">EMAIL</th>
+                            <th scope="col">DATE_TIME</th>
+                            <th scope="col">DESCRIPTION</th>
+                            <th scope="col">AGE</th>
+                            <th scope="col">PHONE</th>
+                            <th scope="col">IMAGE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for patient in patients %}
+                        <tr>
+                            <td>{{patient.id}}</td>
+                            <td>{{patient.name}}</td>
+                            <td>{{patient.surname}}</td>
+                            <td>{{patient.email}}</td>
+                            <td>{{patient.date_time}}</td>
+                            <td>{{patient.description}}</td>
+                            <td>{{patient.age}}</td>
+                            <td>{{patient.phone}}</td>
+                            <td>{{patient.image|truncate(8)}}</td>
+                            <td>
+                                <a href="{{url_for('patient_edit', id=patient.id)}}" class="btn btn-info btn-xs d-flex">Edit</a>
+                                <a href="{{url_for('patient_delete', id=patient.id)}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+            {% endblock %}
