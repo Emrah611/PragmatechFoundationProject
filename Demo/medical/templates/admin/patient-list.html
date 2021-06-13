@@ -29,7 +29,7 @@
                             <td>{{patient.description}}</td>
                             <td>{{patient.age}}</td>
                             <td>{{patient.phone}}</td>
-                            <td>{{patient.image|truncate(8)}}</td>
+                            <td> <img src="../static/uploads/{{patient.image|truncate(8)}}" class="img-thumbnail" alt=""></td>
                             <td>
                                 <a href="{{url_for('patient_edit', id=patient.id)}}" class="btn btn-info btn-xs d-flex">Edit</a>
                                 <a href="{{url_for('patient_delete', id=patient.id)}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')">Delete</a>

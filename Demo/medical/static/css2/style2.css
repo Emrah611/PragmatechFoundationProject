@@ -113,6 +113,13 @@ ul {
     z-index: 1;
 }
 
+.med{
+    font-size: 24px;
+    margin: 4px;
+    margin-left: -25px;
+    color: white;
+}
+
 .medi {
     margin: 0;
     margin-left: 55px;
@@ -609,6 +616,7 @@ ul {
     background-position: center
 }
 
+
 .overlay2 {
     position: absolute;
     display: flex;
@@ -691,6 +699,7 @@ ul {
 
 .ml-120 {
     margin-left: 120px;
+    display: flex;
 }
 
 .disinline {

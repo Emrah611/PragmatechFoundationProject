@@ -46,7 +46,7 @@
         <div class="absalute">
             <span class="color-red">MEDİCAL GROUP COMPANY'E HOŞ GELDİNİZ</span>
             <h2 class="once">Önceliğimiz Sizin Sağlığınızdır</h2>
-            <span class="d-block">Çok uzakta,dağlar kelimesinin arkasında,Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.Ayrılmışlar Bookmarksgrove'da yaşıyorlar.</span>
+            <!-- <span class="d-block">Çok uzakta,dağlar kelimesinin arkasında,Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.Ayrılmışlar Bookmarksgrove'da yaşıyorlar.</span> -->
             <a href="{{url_for('randevu')}}"><button type="submit" class="randevu">Randevu al</button></a>
         </div>
     </section>
@@ -74,28 +74,35 @@
             <div class="row">
                 <div class="col-5 bg-F8F9FA p-left121">
                     <span class="hizmet">Hizmetlerimiz</span>
+                    {% for service in services %}{% if service.id==1 %}
                     <div class="d-flex">
                         <i class="fas fa-ambulance ico"></i>
-                        <h3 class="color1F1F1F">Acil Servis</h3>
-                        <span class="duden1">Düden adlı küçük bir nehir yerlerinden akar ve ona gerekli regeliali sağlar.</span>
+                        <h3 class="color1F1F1F">{{ service.service }}</h3>
+                        <span class="duden1">{{ service.description }}</span>
                     </div>
+                    {% endif %}
+                    {% if service.id==2 %}
                     <div class="d-flex">
                         <i class="fas fa-stethoscope ico"></i>
-                        <h3 class="dis">Dış Mekan Kontrolü</h3>
-                        <span class="duden2">Düden adlı küçük bir nehir yerlerinden akar ve ona gerekli regeliali sağlar.</span>
+                        <h3 class="dis">{{ service.service }}</h3>
+                        <span class="duden2">{{ service.description }}</span>
                     </div>
+                    {% endif %}{% endfor %}
                 </div>
                 <div class="col-3 bg-F8F9FA p-t181">
+                    {% for service in services %}
+                    {% if service.id==3 %}
                     <div class="d-flex">
                         <i class="fas fa-user-md ico"></i>
-                        <h3 class="nite">Nitelikli Doktorlar</h3>
-                        <span class="duden3">Düden adlı küçük bir nehir yerlerinden akar ve ona gerekli regeliali sağlar.</span>
-                    </div>
+                        <h3 class="nite">{{ service.service }}</h3>
+                        <span class="duden3">{{ service.description }}</span>
+                    </div>{% endif %}
+                    {% if service.id==4 %}
                     <div class="d-flex ">
                         <i class="far fa-clock ico"></i>
-                        <h3 class="nite">7/24 Saat Hizmet</h3>
-                        <span class="duden3">Düden adlı küçük bir nehir yerlerinden akar ve ona gerekli regeliali sağlar.</span>
-                    </div>
+                        <h3 class="nite">{{ service.service }}</h3>
+                        <span class="duden3">{{ service.description }}</span>
+                    </div>{% endif %}{% endfor %}
                 </div>
                 <div class="col-4 m-ops">
                     <form action="" method="POST" enctype="multipart/form-data">
@@ -211,23 +218,28 @@
         <div class="container">
             <div class="row mt-13">
                 <div class="col-3 wh-2 ml-48">
-                    <figure class="m-0">
-                        <img src="../static/img/doc-1.jpg" alt="" class="img-5">
-                        <div class="bgclr">
-                            <i class="fab fa-twitter mtl"></i>
-                            <i class="fab fa-facebook-f clr"></i>
-                            <i class="fab fa-google-plus-g clr"></i>
-                            <i class="fab fa-instagram clr"></i>
-                        </div>
-                    </figure>
-                    <h3 class="Lloyd">Dr. Lloyd Wilson</h3>
-                    <h5 class="norol">NÖROLOG</h5>
-                    <p class="hirs">Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım.</p>
-                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a>
+                    <article>
+                        {% for doctor in doctors%} {% if doctor.id==1 %}
+                        <figure class="m-0">
+                            <img src="../static/uploads/{{ doctor.image }}" alt="" class="img-5">
+                            <div class="bgclr">
+                                <i class="fab fa-twitter mtl"></i>
+                                <i class="fab fa-facebook-f clr"></i>
+                                <i class="fab fa-google-plus-g clr"></i>
+                                <i class="fab fa-instagram clr"></i>
+                            </div>
+                            <!-- ../static/img/doc-1.jpg,Dr. Lloyd Wilson,NÖROLOG,Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım. -->
+                        </figure>
+                        <h3 class="Lloyd">{{ doctor.name }}</h3>
+                        <h5 class="norol">{{ doctor.specialty }}</h5>
+                        <p class="hirs">{{ doctor.description }}</p>
+                        <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a> {% endif %} {% endfor %}
+                    </article>
                 </div>
                 <div class="col-3 wh-2 ml-16">
+                    {% for doctor in doctors%} {% if doctor.id==2 %}
                     <figure class="m-0">
-                        <img src="../static/img/doc-2.jpg" alt="" class="img-5">
+                        <img src="../static/uploads/{{ doctor.image }}" alt="" class="img-5">
                         <div class="bgclr">
                             <i class="fab fa-twitter mtl"></i>
                             <i class="fab fa-facebook-f clr"></i>
@@ -235,14 +247,15 @@
                             <i class="fab fa-instagram clr"></i>
                         </div>
                     </figure>
-                    <h3 class="Lloyd">Dr. Rachel Parker</h3>
-                    <h5 class="norol">GÖZ DOKTORU</h5>
-                    <p class="hirs">Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım.</p>
-                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a>
+                    <h3 class="Lloyd">{{ doctor.name }}</h3>
+                    <h5 class="norol">{{ doctor.specialty }}</h5>
+                    <p class="hirs">{{ doctor.description }}</p>
+                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a> {% endif %} {% endfor %}
                 </div>
                 <div class="col-3 wh-2 ml-17">
+                    {% for doctor in doctors%} {% if doctor.id==3 %}
                     <figure class="m-0">
-                        <img src="../static/img/doc-3.jpg" alt="" class="img-5">
+                        <img src="../static/uploads/{{ doctor.image }}" alt="" class="img-5">
                         <div class="bgclr">
                             <i class="fab fa-twitter mtl"></i>
                             <i class="fab fa-facebook-f clr"></i>
@@ -250,14 +263,15 @@
                             <i class="fab fa-instagram clr"></i>
                         </div>
                     </figure>
-                    <h3 class="smith">Ian Smith</h3>
-                    <h5 class="disd">DİŞ DOKTORU</h5>
-                    <p class="hirs">Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım.</p>
-                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a>
+                    <h3 class="smith">{{ doctor.name }}</h3>
+                    <h5 class="disd">{{ doctor.specialty }}</h5>
+                    <p class="hirs">{{ doctor.description }}</p>
+                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a> {% endif %} {% endfor %}
                 </div>
                 <div class="col-3 wh-2 ml-16">
+                    {% for doctor in doctors%} {% if doctor.id==4 %}
                     <figure class="m-0">
-                        <img src="../static/img/doc-4.jpg" alt="" class="img-5">
+                        <img src="../static/uploads/{{ doctor.image }}" alt="" class="img-5">
                         <div class="bgclr">
                             <i class="fab fa-twitter mtl"></i>
                             <i class="fab fa-facebook-f clr"></i>
@@ -265,10 +279,10 @@
                             <i class="fab fa-instagram clr"></i>
                         </div>
                     </figure>
-                    <h3 class="alicia">Dr. Alicia Henderson</h3>
-                    <h5 class="cocuk">ÇOCUK DOKTORU</h5>
-                    <p class="hirs">Hırslı bir işkoliğim ama bunun dışında oldukça basit bir insanım.</p>
-                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a>
+                    <h3 class="alicia">{{ doctor.name }}</h3>
+                    <h5 class="cocuk">{{ doctor.specialty }}</h5>
+                    <p class="hirs">{{ doctor.description }}</p>
+                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a> {% endif %} {% endfor %}
                 </div>
             </div>
         </div>
@@ -325,8 +339,8 @@
                     <div class="ml-121 h-325">
                         <p class="nisan">11 NİSAN 2021</p>
                         <p class="yon">YÖNETİCİ</p>
-                        <i class="fas fa-comment-alt m-18"></i>
-                        <p class="ml-8">3</p>
+                        <!-- <i class="fas fa-comment-alt m-18"></i>
+                        <p class="ml-8">3</p> -->
                         <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey
                         </p>
                         <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
@@ -337,8 +351,8 @@
                     <div class="ml-121">
                         <p class="nisan">11 NİSAN 2021</p>
                         <p class="yon">YÖNETİCİ</p>
-                        <i class="fas fa-comment-alt m-18"></i>
-                        <p class="ml-8">3</p>
+                        <!-- <i class="fas fa-comment-alt m-18"></i>
+                        <p class="ml-8">3</p> -->
                         <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
                         <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
@@ -348,8 +362,8 @@
                     <div class="ml-121">
                         <p class="nisan">11 NİSAN 2021</p>
                         <p class="yon">YÖNETİCİ</p>
-                        <i class="fas fa-comment-alt m-18"></i>
-                        <p class="ml-8">3</p>
+                        <!-- <i class="fas fa-comment-alt m-18"></i>
+                        <p class="ml-8">3</p> -->
                         <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
                         <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
@@ -380,8 +394,8 @@
                     <div class="ml-121 h-480">
                         <p class="nisan">11 NİSAN 2021</p>
                         <p class="yon">YÖNETİCİ</p>
-                        <i class="fas fa-comment-alt m-18"></i>
-                        <p class="ml-8">3</p>
+                        <!-- <i class="fas fa-comment-alt m-18"></i>
+                        <p class="ml-8">3</p> -->
                         <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
                         <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
@@ -391,8 +405,8 @@
                     <div class="ml-121">
                         <p class="nisan">11 NİSAN 2021</p>
                         <p class="yon">YÖNETİCİ</p>
-                        <i class="fas fa-comment-alt m-18"></i>
-                        <p class="ml-8">3</p>
+                        <!-- <i class="fas fa-comment-alt m-18"></i>
+                        <p class="ml-8">3</p> -->
                         <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
                         <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
@@ -402,8 +416,8 @@
                     <div class="ml-121">
                         <p class="nisan">11 NİSAN 2021</p>
                         <p class="yon">YÖNETİCİ</p>
-                        <i class="fas fa-comment-alt m-18"></i>
-                        <p class="ml-8">3</p>
+                        <!-- <i class="fas fa-comment-alt m-18"></i>
+                        <p class="ml-8">3</p> -->
                         <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
                         <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
                         <a href="{{url_for('medical')}}"><button class="devam">Devamını oku</button></a>
@@ -412,7 +426,7 @@
             </div>
         </div>
     </section>
-    <!-- <section>
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-12 bgimg-url2">
@@ -421,36 +435,43 @@
                         <p class="gorus">GÖRÜŞLERİ OKUYUN</p>
                         <h2 class="hasta">Hastamız diyor</h2>
                         <div class="fade">
+                            {% for comment in comments%} {% if comment.id==1 %}
                             <figure>
-                                <img src="../static/img/person_1.jpg" alt="" class="img-7">
-                                <p class="uzak1">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor</p>
-                                <p class="jeff1">Jeff Freshman</p>
+                                <img src="../static/uploads/{{ comment.image }}" alt="" class="img-7">
+                                <p class="uzak1">{{ comment.description }}</p>
+                                <p class="jeff1">{{ comment.full_name }}</p>
                                 <p class="pati1">Patients</p>
                             </figure>
+                            {% endif %} {% endfor %}
                         </div>
                         <div class="fade">
+                            
+                            {% for comment in comments%} {% if comment.id==2 %}
                             <figure>
-                                <img src="../static/img/person_2.jpg" alt="" class="img-8">
-                                <p class="uzak2">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor</p>
-                                <p class="jeff2">Jeff Freshman</p>
+                                <img src="../static/uploads/{{ comment.image }}" alt="" class="img-8">
+                                <p class="uzak2">{{ comment.description }}</p>
+                                <p class="jeff2">{{ comment.full_name }}</p>
                                 <p class="pati2">Patients</p>
                             </figure>
+                            {% endif %} {% endfor %}
                         </div>
                         <div class="fade">
+                            {% for comment in comments%} {% if comment.id==3 %}
                             <figure>
-                                <img src="../static/img/person_3.jpg" alt="" class="img-9">
-                                <p class="uzak3">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor</p>
-                                <p class="jeff3">Jeff Freshman</p>
+                                <img src="../static/uploads/{{ comment.image }}" alt="" class="img-9">
+                                <p class="uzak3">{{ comment.description }}</p>
+                                <p class="jeff3">{{ comment.full_name }}</p>
                                 <p class="pati3">Patients</p>
                             </figure>
+                            {% endif %} {% endfor %}
                         </div>
-                        <a class="prev">&#10094;</a>
-                        <a class="next">&#10095;</a>
+                        <!-- <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a> -->
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <section id="Iletişim">
         <div class="row">
             <div class="col-12 h-315">
@@ -506,13 +527,13 @@
                 </div>
                 <div class="col-6 h-670">
                     <div class="h-550">
-                        <!-- <form action="#" class="ml-40">
+                        <form action="#" class="ml-40">
                             <input type="#" id="isim" placeholder="İsim" class="input3 m-t25">
                             <input type="#" id="soy isim" placeholder="Soyad" class="input3">
                             <input type="#" id="isim" placeholder="Konu" class="input3">
                             <input type="#" id="isim" placeholder="İleti" class="input33">
                             <button class="input4">Mesaj Gönder</button>
-                        </form> -->
+                        </form>
                     </div>
                 </div>
             </div>

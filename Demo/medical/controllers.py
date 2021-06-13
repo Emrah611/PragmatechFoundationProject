@@ -2,7 +2,7 @@ from medical import app,db
 import os
 from flask import render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
-from medical.models import Patient,Profession
+from medical.models import Patient,Profession,Doctor,Comment,Service
 
 #ADMIN
 @app.route("/admin-patient-list")
@@ -81,7 +81,7 @@ def profession_edit(id):
         profession.description = request.form['description']
         db.session.commit()
         return redirect(url_for('profession'))
-    return render_template('admin/profession-edit.html')
+    return render_template('admin/profession-edit.html',professions=professions)
 
 @app.route("/admin-profession-delete/<int:id>")
 def profession_delete(id):
@@ -95,10 +95,137 @@ def profession_list():
     professions = Profession.query.all()
     return render_template("admin/profession-list.html",professions=professions)
 
+
+@app.route('/admin-doctor-add', methods=['GET', 'POST'])
+def doctor_add():
+    doctors = Doctor.query.all()
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        doctor = Doctor(
+            name = request.form['name'],
+            specialty = request.form['specialty'],
+            description = request.form['description'],
+            image = filename,
+        )
+        db.session.add(doctor)
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('admin/doctor-add.html',doctors=doctors)
+
+@app.route("/admin-doctor-edit/<int:id>", methods=['GET', "POST"])
+def doctor_edit(id):
+    doctors = Doctor.query.get_or_404(id)
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        doctor.name = request.form['name']
+        doctor.specialty = request.form['specialty']
+        doctor.description = request.form['description']
+        doctor.image = filename
+        db.session.commit()
+        return redirect(url_for('doctor_add'))
+    return render_template('admin/doctor-edit.html',doctors=doctors)
+
+@app.route("/admin-doctor-delete/<int:id>")
+def doctor_delete(id):
+    doctors = Doctor.query.get_or_404(id)
+    db.session.delete(doctor)
+    db.session.commit()
+    return redirect(url_for('doctor_list'))
+
+@app.route("/admin-doctor-list")
+def doctor_list():
+    doctors = Doctor.query.all()
+    return render_template("admin/doctor-list.html",doctors=doctors)
+
+@app.route('/admin-comment-add', methods=['GET', 'POST'])
+def comment_add():
+    comments = Comment.query.all()
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        comment = Comment(
+            full_name = request.form['full_name'],
+            description = request.form['description'],
+            image = filename,
+        )
+        db.session.add(comment)
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('admin/comment-add.html',comments=comments)
+
+@app.route("/admin-comment-list")
+def comment_list():
+    comments = Comment.query.all()
+    return render_template("admin/comment-list.html",comments=comments)
+
+@app.route("/admin-comment-edit/<int:id>", methods=['GET', "POST"])
+def comment_edit(id):
+    comment = Comment.query.get_or_404(id)
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        comment.full_name = request.form['full_name']
+        comment.description = request.form['description']
+        comment.image = filename
+        db.session.commit()
+        return redirect(url_for('comment_add'))
+    return render_template('admin/comment-edit.html',comments=comments)
+
+@app.route("/admin-comment-delete/<int:id>")
+def comment_delete(id):
+    comment = Comment.query.get_or_404(id)
+    db.session.delete(comment)
+    db.session.commit()
+    return redirect(url_for('comment_list'))
+
+@app.route('/admin-service-add', methods=['GET', 'POST'])
+def service_add():
+    services = Service.query.all()
+    if request.method == 'POST':
+        service = Service(
+            service = request.form['services'],
+            description = request.form['description'],
+        )
+        db.session.add(service)
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('admin/service-add.html',services=services)
+
+@app.route("/admin-service-list")
+def service_list():
+    services = Service.query.all()
+    return render_template("admin/service-list.html",services=services)
+
+@app.route("/admin-service-edit/<int:id>", methods=['GET', "POST"])
+def service_edit(id):
+    services = Service.query.get_or_404(id)
+    if request.method == 'POST':
+        services.services = request.form['services']
+        services.description = request.form['description']
+        db.session.commit()
+        return redirect(url_for('service_add'))
+    return render_template('admin/service-edit.html',services=services)
+
+@app.route("/admin-service-delete/<int:id>")
+def service_delete(id):
+    service = Service.query.get_or_404(id)
+    db.session.delete(service)
+    db.session.commit()
+    return redirect(url_for('service_list'))
+
 #USER 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    doctors = Doctor.query.all()
     professions = Profession.query.all()
+    comments = Comment.query.all()
+    services = Service.query.all()
     if request.method == 'POST':
         file = request.files['file']
         filename = secure_filename(file.filename)
@@ -116,7 +243,8 @@ def home():
         db.session.add(patient)
         db.session.commit()
         return redirect(url_for('patient_list'))
-    return render_template('med1.html',professions=professions)
+    return render_template('med1.html',professions=professions,doctors=doctors,comments=comments,services=services)
+
 
 @app.route('/medical')
 def medical():

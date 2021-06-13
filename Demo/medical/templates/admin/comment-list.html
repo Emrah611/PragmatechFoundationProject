@@ -1,0 +1,33 @@
+{% extends 'admin/base.html' %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Manage Blogs <a href="{{url_for('comment_add')}}"><button type="button"  class="btn btn-success float-right" data-toggle="modal">Add New Blog</button></a></h2>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">FULLNAME</th>
+                            <th scope="col">DESCRIPTION</th>
+                            <th scope="col">IMAGE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for comment in comments %}
+                        <tr>
+                            <td>{{comment.id}}</td>
+                            <td>{{comment.full_name}}</td>
+                            <td>{{comment.description}}</td>
+                            <td> <img src="../static/uploads/{{comment.image|truncate(8)}}" class="img-thumbnail" alt=""></td>
+                            <td>
+                                <a href="{{url_for('comment_edit', id=comment.id)}}" class="btn btn-info btn-xs d-flex">Edit</a>
+                                <a href="{{url_for('comment_delete', id=comment.id)}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+            {% endblock %}

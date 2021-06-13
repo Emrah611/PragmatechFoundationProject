@@ -1,0 +1,17 @@
+{% extends 'admin/base.html' %} {% block content %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Service</label>
+        <input type="text" class="form-control" name="services">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" name='description'></textarea>
+    </div>
+    <div class="form-group">
+        <a href="{{url_for('service_list')}}"><button class="btn btn-primary" type="submit"
+        >Update Blog</button></a>
+    </div>
+</form>
+</div> {% endblock %}
