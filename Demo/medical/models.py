@@ -2,7 +2,7 @@ from medical import db
 from datetime import datetime
 
 class Patient(db.Model):
-
+    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     surname = db.Column(db.String(50), nullable=False)
@@ -54,3 +54,12 @@ class Service(db.Model):
    
     def __repr__(self):
         return f'Service {self.full_name}'
+
+
+class Update(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    date_time = db.Column(db.String(100),default=datetime.now)
+    short_description = db.Column(db.Text(80),nullable=False)
+    description = db.Column(db.Text(80),nullable=False)
+    image = db.Column(db.String(20), default='uploads/images.jpg')

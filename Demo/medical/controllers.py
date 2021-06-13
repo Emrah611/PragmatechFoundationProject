@@ -2,7 +2,8 @@ from medical import app,db
 import os
 from flask import render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
-from medical.models import Patient,Profession,Doctor,Comment,Service
+from medical.models import Patient,Profession,Doctor,Comment,Service,Update
+
 
 #ADMIN
 @app.route("/admin-patient-list")
@@ -165,21 +166,21 @@ def comment_list():
 
 @app.route("/admin-comment-edit/<int:id>", methods=['GET', "POST"])
 def comment_edit(id):
-    comment = Comment.query.get_or_404(id)
+    comments = Comment.query.get_or_404(id)
     if request.method == 'POST':
         file = request.files['file']
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        comment.full_name = request.form['full_name']
-        comment.description = request.form['description']
-        comment.image = filename
+        comments.full_name = request.form['full_name']
+        comments.description = request.form['description']
+        comments.image = filename
         db.session.commit()
         return redirect(url_for('comment_add'))
     return render_template('admin/comment-edit.html',comments=comments)
 
 @app.route("/admin-comment-delete/<int:id>")
 def comment_delete(id):
-    comment = Comment.query.get_or_404(id)
+    comments = Comment.query.get_or_404(id)
     db.session.delete(comment)
     db.session.commit()
     return redirect(url_for('comment_list'))
@@ -219,6 +220,56 @@ def service_delete(id):
     db.session.commit()
     return redirect(url_for('service_list'))
 
+
+@app.route("/admin-update-list")
+def update_list():
+    updates = Update.query.all()
+    return render_template("admin/update-list.html",updates=updates)
+
+@app.route("/admin-update-add", methods=['GET', 'POST'])
+def update_add():
+    updates = Update.query.all()
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        update = Update(
+            date_time = request.form['date-time'],
+            description = request.form['description'],
+            short_description = request.form['short-description'],
+            image = filename,
+        )
+        db.session.add(update)
+        db.session.commit()
+        return redirect(url_for('update_list'))
+    return render_template("admin/update-add.html",updates=updates)
+
+
+@app.route("/admin-update-edit/<int:id>", methods=['GET', "POST"])
+def update_edit(id):
+    updates = Update.query.get_or_404(id)
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        updates.date_time = request.form['date-time']
+        updates.description = request.form['description']
+        updates.short_description = request.form['short-description']
+        updates.image = filename
+        db.session.commit()
+        return redirect(url_for('update_list'))
+    return render_template('admin/update-edit.html',updates=updates)
+
+
+@app.route("/admin-update-delete/<int:id>")
+def update_delete(id):
+    update = Update.query.get_or_404(id)
+    db.session.delete(update)
+    db.session.commit()
+    return redirect(url_for('update_list'))
+
+
+
 #USER 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -226,6 +277,7 @@ def home():
     professions = Profession.query.all()
     comments = Comment.query.all()
     services = Service.query.all()
+    updates = Update.query.all()
     if request.method == 'POST':
         file = request.files['file']
         filename = secure_filename(file.filename)
@@ -243,7 +295,7 @@ def home():
         db.session.add(patient)
         db.session.commit()
         return redirect(url_for('patient_list'))
-    return render_template('med1.html',professions=professions,doctors=doctors,comments=comments,services=services)
+    return render_template('med1.html',professions=professions,doctors=doctors,comments=comments,services=services,updates=updates)
 
 
 @app.route('/medical')

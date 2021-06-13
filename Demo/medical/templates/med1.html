@@ -321,11 +321,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div>
                         <figure class="fig-6">
-                            <img src="../static/img/image_1.jpg" alt="" class="img-6 ml-121">
-                            <img src="../static/img/image_2.jpg" alt="" class="img-6 ml-26">
-                            <img src="../static/img/image_3.jpg" alt="" class="img-6 ml-26">
+                            {% for update in updates%}{% if update.id==1 %}
+                            <img src="../static/uploads/{{ update.image }}" alt="" class="img-6 ml-121">
+                            {% endif %}{% endfor %}{% for update in updates%}{% if update.id==2 %}
+                            <img src="../static/uploads/{{ update.image }}" alt="" class="img-6 ml-26">
+                            {% endif %}{% endfor %}{% for update in updates%}{% if update.id==3 %}
+                            <img src="../static/uploads/{{ update.image }}" alt="" class="img-6 ml-26">
+                            {% endif %}{% endfor %}
                         </figure>
                     </div>
                 </div>
@@ -337,36 +340,41 @@
             <div class="row">
                 <div class="col-4">
                     <div class="ml-121 h-325">
-                        <p class="nisan">11 NİSAN 2021</p>
+                        {% for update in updates%}{% if update.id==1 %}
+                        <p class="nisan">{{ update.date_time }}</p>
                         <p class="yon">YÖNETİCİ</p>
                         <!-- <i class="fas fa-comment-alt m-18"></i>
                         <p class="ml-8">3</p> -->
-                        <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey
-                        </p>
-                        <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
+                        <p class="yeter">{{ update.short_description }}</p>
+                        <p class="uzak">{{ update.description }}</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
+                        {% endif %}{% endfor %}
                     </div>
                 </div>
                 <div class="col-4 ml-71">
                     <div class="ml-121">
-                        <p class="nisan">11 NİSAN 2021</p>
+                        {% for update in updates%}{% if update.id==2 %}
+                        <p class="nisan">{{ update.date_time }}</p>
                         <p class="yon">YÖNETİCİ</p>
                         <!-- <i class="fas fa-comment-alt m-18"></i>
                         <p class="ml-8">3</p> -->
-                        <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
-                        <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
+                        <p class="yeter">{{ update.short_description }}</p>
+                        <p class="uzak">{{ update.description }}</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
+                        {% endif %}{% endfor %}
                     </div>
                 </div>
                 <div class="col-4 ml-71">
                     <div class="ml-121">
-                        <p class="nisan">11 NİSAN 2021</p>
+                        {% for update in updates%}{% if update.id==3 %}
+                        <p class="nisan">{{ update.date_time }}</p>
                         <p class="yon">YÖNETİCİ</p>
                         <!-- <i class="fas fa-comment-alt m-18"></i>
                         <p class="ml-8">3</p> -->
-                        <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
-                        <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
+                        <p class="yeter">{{ update.short_description }}</p>
+                        <p class="uzak">{{ update.description }}</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
+                        {% endif %}{% endfor %}
                     </div>
                 </div>
             </div>
@@ -378,9 +386,13 @@
                 <div class="col-12">
                     <div>
                         <figure class="fig-6">
-                            <img src="../static/img/image_4.jpg" alt="" class="img-6 ml-121">
-                            <img src="../static/img/image_5.jpg" alt="" class="img-6 ml-26">
-                            <img src="../static/img/image_6.jpg" alt="" class="img-6 ml-26">
+                            {% for update in updates%}{% if update.id==4 %}
+                            <img src="../static/uploads/{{ update.image }}" alt="" class="img-6 ml-121">
+                            {% endif %}{% endfor %}{% for update in updates%}{% if update.id==5 %}
+                            <img src="../static/uploads/{{ update.image }}" alt="" class="img-6 ml-26">
+                            {% endif %}{% endfor %}{% for update in updates%}{% if update.id==6 %}
+                            <img src="../static/uploads/{{ update.image }}" alt="" class="img-6 ml-26">
+                            {% endif %}{% endfor %}
                         </figure>
                     </div>
                 </div>
@@ -392,35 +404,41 @@
             <div class="row">
                 <div class="col-4">
                     <div class="ml-121 h-480">
-                        <p class="nisan">11 NİSAN 2021</p>
+                        {% for update in updates%}{% if update.id==4 %}
+                        <p class="nisan">{{ update.date_time }}</p>
                         <p class="yon">YÖNETİCİ</p>
                         <!-- <i class="fas fa-comment-alt m-18"></i>
                         <p class="ml-8">3</p> -->
-                        <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
-                        <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
+                        <p class="yeter">{{ update.short_description }}</p>
+                        <p class="uzak">{{ update.description }}</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
+                        {% endif %}{% endfor %}
                     </div>
                 </div>
                 <div class="col-4 ml-71">
                     <div class="ml-121">
-                        <p class="nisan">11 NİSAN 2021</p>
+                        {% for update in updates%}{% if update.id==5 %}
+                        <p class="nisan">{{ update.date_time }}</p>
                         <p class="yon">YÖNETİCİ</p>
                         <!-- <i class="fas fa-comment-alt m-18"></i>
                         <p class="ml-8">3</p> -->
-                        <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
-                        <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
+                        <p class="yeter">{{ update.short_description }}</p>
+                        <p class="uzak">{{ update.description }}</p>
                         <a href="{{url_for('medical')}}"> <button class="devam">Devamını oku</button></a>
+                        {% endif %}{% endfor %}
                     </div>
                 </div>
                 <div class="col-4 ml-71">
                     <div class="ml-121">
-                        <p class="nisan">11 NİSAN 2021</p>
+                        {% for update in updates%}{% if update.id==6 %}
+                        <p class="nisan">{{ update.date_time }}</p>
                         <p class="yon">YÖNETİCİ</p>
                         <!-- <i class="fas fa-comment-alt m-18"></i>
                         <p class="ml-8">3</p> -->
-                        <p class="yeter">Yeterince Uyuyamadığınız Korkunç Şey</p>
-                        <p class="uzak">Çok uzakta, dağlar kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşıyor.</p>
+                        <p class="yeter">{{ update.short_description }}</p>
+                        <p class="uzak">{{ update.description }}</p>
                         <a href="{{url_for('medical')}}"><button class="devam">Devamını oku</button></a>
+                        {% endif %}{% endfor %}
                     </div>
                 </div>
             </div>
