@@ -21,7 +21,7 @@
         <div class="container">
             <div id="navbar" class="row bg-color">
                 <div class="col-3 p-1">
-                    <h1 class="medi">MEDICAL GROUP COMPANY</h1>
+                    <a href="{{url_for('medical')}}"><h1 class="medi">MEDICAL GROUP COMPANY</h1></a>
                 </div>
                 <div class="col-9 p-2 ">
                     <a href="{{url_for('home')}}" class="fs ml-200 A1">Ev</a>
@@ -63,6 +63,7 @@
                     <img src="../static/img2/image_4.jpg" alt="" class="img-3 ml-120">
                     <p class="lorem ml-120">{{note.description4}}</p>
                         {% endfor %}
+                    <a href="{{url_for('note_list')}}"><button class="btn-2">EDIT</button></a>
                     <!-- <button class="life ml-120 btn">LIFE</button>
                     <button class="life btn-2">SPORT</button>
                     <button class="life btn-2">TEACH</button>
@@ -127,7 +128,7 @@
                         </form>
                     </div>
                     <div class="wh-4">
-                        <h2 class="kategori">Kategoriler</h2>
+                        <a href="{{url_for('department_list')}}"><h2 class="kategori">Edit Kategoriler</h2></a>
                         {% for department in departments %}{% if department.id==1 %}
                         <p class="oftal">{{department.title}}</p>
                         <!-- <span class="twen">(12)</span> -->
@@ -159,7 +160,7 @@
                         {% endif %} {% endfor %}
                     </div>
                     <div class="wh-5">
-                        <h3 class="son">Son Blog</h3>
+                        <a href="{{url_for('blog_list')}}"><h3 class="son">Blog Edit</h3></a>
                         {% for blog in blogs %}{% if blog.id==1 %}
                         <img src="../static/uploads/{{ blog.image }}" alt="" class="image_1">
                         <p class="guclu"> {{blog.short_description}}</p>
@@ -242,6 +243,9 @@
             </div>
         </div>
     </section>
+    <div>
+        <a href="{{url_for('department_list')}}"><button type="submit" class="input-4">Edit-Departments</button></a>
+    </div>
     {% endblock %}
 </body>
 </html>

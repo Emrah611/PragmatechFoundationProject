@@ -1,11 +1,10 @@
 * {
     box-sizing: border-box;
+    max-width: 1349px;
 }
 
 body {
     margin: 0px;
-    width: 100%;
-    max-width: 1349px;
 }
 
 .row {
@@ -329,11 +328,6 @@ ul {
     color: #555D5F;
 }
 
-.wh {
-    width: 100%;
-    height: 4770px;
-}
-
 .bir {
     font-family: "Open Sans", sans-serif;
     Font-size: 32px;
@@ -389,8 +383,13 @@ ul {
 
 .btn-2 {
     border: none;
-    width: 60px;
-    height: 25px;
+    width: 70px;
+    height: 30px;
+    margin-left: 84%;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    font-size: 10px;
 }
 
 .btn-3 {
@@ -484,6 +483,10 @@ ul {
     margin-left: 80px;
 }
 
+.mt-16 {
+    margin-top: 16px;
+}
+
 .ml-40 {
     margin-left: 40px;
 }
@@ -566,18 +569,18 @@ ul {
 .input3 {
     display: block;
     border: 1px solid #D8D8D8;
-    padding: 16px 325px;
     outline: none;
     width: 457px;
+    padding: 15px 15px;
     margin-bottom: 15px;
 }
 
 .input33 {
     display: block;
     border: 1px solid #D8D8D8;
-    padding: 16px 325px;
     outline: none;
     width: 457px;
+    padding: 15px 15px;
     height: 282px;
     margin-bottom: 15px;
 }
@@ -592,12 +595,42 @@ ul {
     border-radius: 30px;
     width: 200px;
     height: 65px;
+    margin-left: 35%;
     cursor: pointer;
     margin-top: 16px;
     border: 1px solid #D8D8D8;
     outline: none;
     text-align: center;
 }
+
+.input-4{
+    background-color: #E2544C;
+   color: white;
+   border-radius: 35px;
+   width: 210px;
+   height: 58px;
+   cursor: pointer;
+   margin-top: -20px;
+   margin-left: 22%;
+   border: 1px solid #D8D8D8;
+   outline: none;
+   text-align: center;
+}
+
+.input4:hover {
+    background-color: white;
+    border: 1px solid #FE5F55;
+    color: #FE5F55;
+    transition: all 1s ease 0s;
+}
+
+.input-4:hover {
+    background-color: white;
+    border: 1px solid #FE5F55;
+    color: #FE5F55;
+    transition: all 1s ease 0s;
+}
+
 
 .isim {
     font-family: Poppins, Arial, sans-serif;
@@ -854,7 +887,6 @@ ul {
 
 .wh-4 {
     width: 300px;
-    height: 300px;
     margin-top: 87px;
     margin-left: 5px;
 }

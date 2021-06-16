@@ -1,11 +1,10 @@
     * {
         box-sizing: border-box;
+        max-width: 1349px;
     }
     
     body {
         margin: 0px;
-        width: 100%;
-        max-width: 1349px;
     }
     
     .row {
@@ -1598,7 +1597,25 @@
         width: 457px;
         height: 156px;
     }
+
+    .input-4{
+         background-color: #E2544C;
+        color: white;
+        border-radius: 35px;
+        width: 210px;
+        height: 58px;
+        cursor: pointer;
+        margin-top: -20px;
+        margin-left: 22%;
+        border: 1px solid #D8D8D8;
+        outline: none;
+        text-align: center;
+    }
     
+    .mt-95{
+        margin-top: 95px;
+    }
+
     .input4 {
         background-color: #E2544C;
         color: white;
@@ -1606,13 +1623,21 @@
         width: 210px;
         height: 58px;
         cursor: pointer;
-        margin-top: 16px;
+        margin-top: 10px;
+        margin-left: 62%;
         border: 1px solid #D8D8D8;
         outline: none;
         text-align: center;
     }
     
     .input4:hover {
+        background-color: white;
+        border: 1px solid #FE5F55;
+        color: #FE5F55;
+        transition: all 1s ease 0s;
+    }
+
+    .input-4:hover {
         background-color: white;
         border: 1px solid #FE5F55;
         color: #FE5F55;
@@ -1823,3 +1848,45 @@
         margin-top: 18px;
         margin-right: 5px;
     }
+
+        
+.lorem2 {
+    font-family: "Open Sans", sans-serif;
+    width: 85%;
+    margin-left: 80px;
+    margin-top: -10px;
+    Font-size: 18px;
+    Font-weight: 400;
+    Line-height: 30px;
+    color: #999999;
+}
+
+.john {
+    font-family: Poppins, Arial, sans-serif;
+    Font-size: 20px;
+    Font-weight: 400;
+    Line-height: 30px;
+    margin-top: -60px;
+    margin-left: 80px;
+}
+
+.nisan2 {
+    font-family: Poppins, Arial, sans-serif;
+    Font-size: 13px;
+    Font-weight: 400;
+    Line-height: 23.4px;
+    color: #CFD3DD;
+    margin-left: 80px;
+    letter-spacing: 2px;
+}
+
+.img-55 {
+    border-radius: 50%;
+    width: 55px;
+    object-fit: cover;
+    margin-top: 15px;
+}
+
+.ml-40 {
+    margin-left: 40px;
+}

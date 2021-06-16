@@ -2,7 +2,7 @@ from medical import app,db
 import os
 from flask import render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
-from medical.models import Patient,Profession,Doctor,Comment,Service,Update
+from medical.models import Patient,Profession,Doctor,Comment,Service,Update,Addcomment,Department,Note,Blog
 
 
 #ADMIN
@@ -76,18 +76,18 @@ def profession():
 
 @app.route("/admin-profession-edit/<int:id>", methods=['GET', "POST"])
 def profession_edit(id):
-    profession = Profession.query.get_or_404(id)
+    professions = Profession.query.get_or_404(id)
     if request.method == 'POST':
-        profession.specialty = request.form['specialty']
-        profession.description = request.form['description']
+        professions.specialty = request.form['specialty']
+        professions.description = request.form['description']
         db.session.commit()
-        return redirect(url_for('profession'))
+        return redirect(url_for('profession_list'))
     return render_template('admin/profession-edit.html',professions=professions)
 
 @app.route("/admin-profession-delete/<int:id>")
 def profession_delete(id):
-    profession = Profession.query.get_or_404(id)
-    db.session.delete(profession)
+    professions = Profession.query.get_or_404(id)
+    db.session.delete(professions)
     db.session.commit()
     return redirect(url_for('profession_list'))
 
@@ -122,18 +122,18 @@ def doctor_edit(id):
         file = request.files['file']
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        doctor.name = request.form['name']
-        doctor.specialty = request.form['specialty']
-        doctor.description = request.form['description']
-        doctor.image = filename
+        doctors.name = request.form['name']
+        doctors.specialty = request.form['specialty']
+        doctors.description = request.form['description']
+        doctors.image = filename
         db.session.commit()
-        return redirect(url_for('doctor_add'))
+        return redirect(url_for('doctor_list'))
     return render_template('admin/doctor-edit.html',doctors=doctors)
 
 @app.route("/admin-doctor-delete/<int:id>")
 def doctor_delete(id):
     doctors = Doctor.query.get_or_404(id)
-    db.session.delete(doctor)
+    db.session.delete(doctors)
     db.session.commit()
     return redirect(url_for('doctor_list'))
 
@@ -175,13 +175,13 @@ def comment_edit(id):
         comments.description = request.form['description']
         comments.image = filename
         db.session.commit()
-        return redirect(url_for('comment_add'))
+        return redirect(url_for('comment_list'))
     return render_template('admin/comment-edit.html',comments=comments)
 
 @app.route("/admin-comment-delete/<int:id>")
 def comment_delete(id):
     comments = Comment.query.get_or_404(id)
-    db.session.delete(comment)
+    db.session.delete(comments)
     db.session.commit()
     return redirect(url_for('comment_list'))
 
@@ -210,13 +210,13 @@ def service_edit(id):
         services.services = request.form['services']
         services.description = request.form['description']
         db.session.commit()
-        return redirect(url_for('service_add'))
+        return redirect(url_for('service_list'))
     return render_template('admin/service-edit.html',services=services)
 
 @app.route("/admin-service-delete/<int:id>")
 def service_delete(id):
-    service = Service.query.get_or_404(id)
-    db.session.delete(service)
+    services = Service.query.get_or_404(id)
+    db.session.delete(services)
     db.session.commit()
     return redirect(url_for('service_list'))
 
@@ -263,11 +263,144 @@ def update_edit(id):
 
 @app.route("/admin-update-delete/<int:id>")
 def update_delete(id):
-    update = Update.query.get_or_404(id)
-    db.session.delete(update)
+    updates = Update.query.get_or_404(id)
+    db.session.delete(updates)
     db.session.commit()
     return redirect(url_for('update_list'))
 
+@app.route("/admin-department-add", methods=['GET', 'POST'])
+def department_add():
+    departments = Department.query.all()
+    if request.method == 'POST':
+        department = Department(
+            title = request.form['title'],
+        )
+        db.session.add(department)
+        db.session.commit()
+        return redirect(url_for('department_list'))
+    return render_template("admin/department-add.html",departments=departments)
+
+
+@app.route("/admin-department-list")
+def department_list():
+    departments = Department.query.all()
+    return render_template("admin/department-list.html",departments=departments)
+
+
+@app.route("/admin-department-edit/<int:id>", methods=['GET', "POST"])
+def department_edit(id):
+    departments = Department.query.get_or_404(id)
+    if request.method == 'POST':
+        departments.title = request.form['title']
+        db.session.commit()
+        return redirect(url_for('department_list'))
+    return render_template('admin/department-edit.html',departments=departments)
+
+@app.route("/admin-department-delete/<int:id>")
+def department_delete(id):
+    department = Department.query.get_or_404(id)
+    db.session.delete(department)
+    db.session.commit()
+    return redirect(url_for('department_list'))
+
+@app.route("/admin-note-add", methods=['GET', 'POST'])
+def note_add():
+    notes = Note.query.all()
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        note = Note(
+            short_description = request.form['short-description'],
+            description = request.form['description'],
+            description2 = request.form['description2'],
+            short_description2 = request.form['short-description2'],
+            description3 = request.form['description3'],
+            description4 = request.form['description4'],
+            image = filename,
+        )
+        db.session.add(note)
+        db.session.commit()
+        return redirect(url_for('note_list'))
+    return render_template("admin/note-add.html",notes=notes)
+
+
+@app.route("/admin-note-list")
+def note_list():
+    notes = Note.query.all()
+    return render_template("admin/note-list.html",notes=notes)
+
+
+@app.route("/admin-note-edit/<int:id>", methods=['GET', "POST"])
+def note_edit(id):
+    notes = Note.query.get_or_404(id)
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        notes.short_description = request.form['short-description']
+        notes.description = request.form['description']
+        notes.description2 = request.form['description2']
+        notes.short_description2 = request.form['short-description2']
+        notes.description3 = request.form['description3']
+        notes.description4 = request.form['description4']
+        notes.image = filename
+        db.session.commit()
+        return redirect(url_for('note_list'))
+    return render_template('admin/note-edit.html',notes=notes)
+
+
+@app.route("/admin-note-delete/<int:id>")
+def note_delete(id):
+    note = Note.query.get_or_404(id)
+    db.session.delete(note)
+    db.session.commit()
+    return redirect(url_for('note_list'))
+
+@app.route("/admin-blog-list")
+def blog_list():
+    blogs = Blog.query.all()
+    return render_template("admin/blog-list.html",blogs=blogs)
+
+@app.route("/admin-blog-add", methods=['GET', 'POST'])
+def blog_add():
+    blogs = Blog.query.all()
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        blog = Blog(
+            date_time = request.form['date-time'],
+            short_description = request.form['short-description'],
+            image = filename,
+        )
+        db.session.add(blog)
+        db.session.commit()
+        return redirect(url_for('blog_list'))
+    return render_template("admin/blog-add.html",blogs=blogs)
+
+
+@app.route("/admin-blog-edit/<int:id>", methods=['GET', "POST"])
+def blog_edit(id):
+    blogs = Blog.query.get_or_404(id)
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        blogs.date_time = request.form['date-time']
+        blogs.short_description = request.form['short-description']
+        blogs.image = filename
+        db.session.commit()
+        return redirect(url_for('blog_list'))
+    return render_template('admin/blog-edit.html',blogs=blogs)
+
+
+@app.route("/admin-blog-delete/<int:id>")
+def blog_delete(id):
+    blogs = Blog.query.get_or_404(id)
+    db.session.delete(blogs)
+    db.session.commit()
+    return redirect(url_for('blog_list'))
 
 
 #USER 
@@ -278,6 +411,8 @@ def home():
     comments = Comment.query.all()
     services = Service.query.all()
     updates = Update.query.all()
+    addcomments = Addcomment.query.all()
+    departments = Department.query.all()
     if request.method == 'POST':
         file = request.files['file']
         filename = secure_filename(file.filename)
@@ -293,14 +428,96 @@ def home():
             image = filename,
         )
         db.session.add(patient)
+        db.session.add(addcomment)
         db.session.commit()
         return redirect(url_for('patient_list'))
-    return render_template('med1.html',professions=professions,doctors=doctors,comments=comments,services=services,updates=updates)
+    return render_template('med1.html',professions=professions,doctors=doctors,comments=comments,services=services,updates=updates,addcomments=addcomments,departments=departments)
+
+@app.route('/admin-1', methods=['GET', 'POST'])
+def admin_med1():
+    doctors = Doctor.query.all()
+    professions = Profession.query.all()
+    comments = Comment.query.all()
+    services = Service.query.all()
+    updates = Update.query.all()
+    addcomments = Addcomment.query.all()
+    departments = Department.query.all()
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        patient = Patient(
+            name = request.form['name'],
+            surname = request.form['surname'],
+            email = request.form['email'],
+            date_time = request.form['date-time'],
+            description = request.form['description'],
+            age = request.form['age'],
+            phone = request.form['phone'],
+            image = filename,
+        )
+        db.session.add(patient)
+        db.session.add(addcomment)
+        db.session.commit()
+        return redirect(url_for('patient_list'))
+    return render_template('admin-med1.html',professions=professions,doctors=doctors,comments=comments,services=services,updates=updates,addcomments=addcomments,departments=departments)
 
 
-@app.route('/medical')
+
+@app.route('/medical', methods=['GET', 'POST'])
 def medical():
-    return render_template('med2.html')
+    addcomments = Addcomment.query.all()
+    departments = Department.query.all()
+    notes = Note.query.all()
+    blogs = Blog.query.all()
+    if request.method == 'POST':
+        file = request.files['image']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        addcomment = Addcomment(
+            name = request.form['user-name'],
+            description = request.form['user-description'],
+            date_time = request.form['user-datetime'],
+            image = filename,
+        )
+        db.session.add(addcomment)
+        db.session.commit()
+        return redirect(url_for('medical'))
+    return render_template('med2.html',addcomments=addcomments,departments=departments,notes=notes,blogs=blogs)
+
+
+@app.route('/admin-2', methods=['GET', 'POST'])
+def admin_med2():
+    addcomments = Addcomment.query.all()
+    departments = Department.query.all()
+    notes = Note.query.all()
+    blogs = Blog.query.all()
+    if request.method == 'POST':
+        file = request.files['image']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        addcomment = Addcomment(
+            name = request.form['user-name'],
+            description = request.form['user-description'],
+            date_time = request.form['user-datetime'],
+            image = filename,
+        )
+        db.session.add(addcomment)
+        db.session.commit()
+        return redirect(url_for('medical'))
+    return render_template('admin-med2.html',addcomments=addcomments,departments=departments,notes=notes,blogs=blogs)
+
+@app.route("/user-addcomment-list")
+def addcomment_list():
+    addcomments = Addcomment.query.all()
+    return render_template("admin/addcomment-list.html",addcomments=addcomments)
+
+@app.route("/user-addcomment-delete/<int:id>")
+def addcomment_delete(id):
+    addcomment = Addcomment.query.get_or_404(id)
+    db.session.delete(addcomment)
+    db.session.commit()
+    return redirect(url_for('addcomment_list'))
 
 @app.route("/randevu", methods=['GET', 'POST'])
 def randevu():
@@ -321,5 +538,5 @@ def randevu():
         )
         db.session.add(patient)
         db.session.commit()
-        return redirect(url_for('patient_list'))
+        return redirect(url_for('home'))
     return render_template("randevu.html",patients=patients)

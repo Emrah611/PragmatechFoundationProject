@@ -19,7 +19,7 @@
                             <td>{{service.service}}</td>
                             <td>{{service.description}}</td>
                             <td>
-                                <a href="{{url_for('service_edit', id=service.id)}}" class="btn btn-info btn-xs d-flex">Edit</a>
+                                <a href="{{url_for('service_edit', id=service.id)}}" class="btn btn-info btn-xs ">Edit</a>
                                 <a href="{{url_for('service_delete', id=service.id)}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
                             </td>
                         </tr>

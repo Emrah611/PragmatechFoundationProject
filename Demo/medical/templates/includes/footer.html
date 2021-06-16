@@ -31,21 +31,24 @@
                             <li class="oft2">
                                 <i class="fas fa-long-arrow-alt-right"></i>
                             </li>
+                            <li class="oft2">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </li>
                         </ul>
-                        <p class="nor">Nöroloji</p>
-                        <p class="oft">Oftalmoloji</p>
-                        <p class="oft">Nükleer Manyetik</p>
-                        <p class="oft">Cerrahi</p>
-                        <p class="oft">Kardiyoloji</p>
-                        <p class="oft">Diş</p>
+                        {% for department in departments %}{% if department.id==1 %}
+                        <p class="nor">{{department.title}}</p>{% endif %} {% endfor %}{% for department in departments %}{% if department.id==2 %}
+                        <p class="oft">{{department.title}}</p>{% endif %} {% endfor %}{% for department in departments %}{% if department.id==3 %}
+                        <p class="oft">{{department.title}}</p>{% endif %} {% endfor %}{% for department in departments %}{% if department.id==4 %}
+                        <p class="oft">{{department.title}}</p>{% endif %} {% endfor %}{% for department in departments %}{% if department.id==5 %}
+                        <p class="oft">{{department.title}}</p>{% endif %} {% endfor %}{% for department in departments %}{% if department.id==6 %}
+                        <p class="oft">{{department.title}}</p>{% endif %} {% endfor %}{% for department in departments %}{% if department.id==7 %}
+                        <p class="oft">{{department.title}}</p>{% endif %} {% endfor %}
+                        <!--Nöroloji Oftalmoloji Nükleer Manyetik Cerrahi Kardiyoloji Diş -->
                     </div>
                     <div class="mw">
                         <h2 class="mt-130">Bağlantılar</h2>
                         <ul>
                             <li class="nor2">
-                                <i class="fas fa-long-arrow-alt-right"></i>
-                            </li>
-                            <li class="oft2">
                                 <i class="fas fa-long-arrow-alt-right"></i>
                             </li>
                             <li class="oft2">
@@ -69,7 +72,6 @@
                         <p class="oft">Bölümler</p>
                         <p class="oft">Doktorlar</p>
                         <p class="oft">Blog</p>
-                        <p class="oft">Fiyatlandırma</p>
                         <p class="oft">İletişim</p>
                     </div>
                     <div class="ml-55">

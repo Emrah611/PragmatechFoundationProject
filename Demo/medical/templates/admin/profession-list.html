@@ -20,7 +20,7 @@
                                 <td>{{profession.specialty}}</td>
                                 <td>{{profession.description}}</td>
                                 <td>
-                                    <a href="{{url_for('profession_edit', id=profession.id)}}" class="btn btn-info btn-xs d-flex">Edit</a>
+                                    <a href="{{url_for('profession_edit', id=profession.id)}}" class="btn btn-info btn-xs">Edit</a>
                                     <a href="{{url_for('profession_delete', id=profession.id)}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
                                 </td>
                             </tr>

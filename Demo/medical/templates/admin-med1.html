@@ -20,7 +20,7 @@
         <div class="container">
             <div id="navbar" class="row bg-color">
                 <div class="col-3 p-1">
-                    <h1 class="medi">MEDICAL GROUP COMPANY</h1>
+                    <a href="{{url_for('home')}}"><h1 class="medi">MEDICAL GROUP COMPANY</h1></a>
                 </div>
                 <div class="col-9 p-2 ">
                     <a href="#" class="fs ml-200 A1">Ev</a>
@@ -63,7 +63,7 @@
                         <span class="fs-25">Biz <span class="color-1E73EB"> Medical Group Company</span> Bir Tıp Kliniğiyiz</span>
                         <span class="color-99A5C2">Düden adlı küçük bir nehir yerlerinden akar ve ona gerekli regeliali sağlar. Cümlenin kavrulmuş kısımlarının ağzınıza uçtuğu paradisematik bir ülkedir. Cümlenin kavrulmuş kısımlarının ağzınıza uçtuğu paradisematik bir ülkedir.</span>
                         <a href="{{url_for('randevu')}}"><button class="randevu ml-100">Randevu al</button></a>
-                        <a href="#Iletişim"><button class="randevu-2">Bize Ulaşın</button></a>
+                        <button class="randevu-2">Bize Ulaşın</button>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                     </div>{% endif %}
                     {% if service.id==4 %}
                     <div class="d-flex ">
-                        <i class="far fa-clock ico"></i>
+                        <a href="{{url_for('service_list')}}"><button class="mt-95">Edit</button></a>
                         <h3 class="nite">{{ service.service }}</h3>
                         <span class="duden3">{{ service.description }}</span>
                     </div>{% endif %}{% endfor %}
@@ -132,7 +132,7 @@
                     <img src="../static/img/bg_2.jpg" alt="" class="imgbg-2">
                     <h3 class="h-rel">Sağlığınız Önceliğimizdir</h3>
                     <span class="sp-ab">Hayalinizdeki yapıyı yönetebiliriz Yerinden Düden adlı küçük bir nehir akar</span>
-                    <a href="{{url_for('medical')}}"><button class="ara">Ara</button></a>
+                    <button class="ara">Ara</button>
                 </figure>
             </div>
         </div>
@@ -175,7 +175,7 @@
                     </div>
                     <div class="whb mt-49">
                         <i class="fas fa-stethoscope ico2"></i>
-                        <h3 class="ff-Poppins">Röntgen</h3>
+                        <a href="{{url_for('profession_list')}}"><h3 class="ff-Poppins">Edit-Profession</h3></a>
                         <p class="mwh">Çok uzakta, dağ kelimesinin arkasında</p>
                     </div>
                     {% for profession in professions%}
@@ -271,7 +271,8 @@
                     <h3 class="alicia">{{ doctor.name }}</h3>
                     <h5 class="cocuk">{{ doctor.specialty }}</h5>
                     <p class="hirs">{{ doctor.description }}</p>
-                    <a href="{{url_for('randevu')}}"><button class="simdi">Şimdi Rezervasyon Yap</button></a> {% endif %} {% endfor %}
+                    <a href="{{url_for('doctor_list')}}"><button class="simdi">Edit-Doctor</button></a>
+                    {% endif %} {% endfor %}
                 </div>
             </div>
         </div>
@@ -421,7 +422,7 @@
                     <div class="ml-121">
                         {% for update in updates%}{% if update.id==6 %}
                         <p class="nisan">{{ update.date_time }}</p>
-                        <p class="yon">YÖNETİCİ</p>
+                        <a href="{{url_for('update_list')}}"><p class="yon">YÖNETİCİ</p></a>
                         <!-- <i class="fas fa-comment-alt m-18"></i>
                         <p class="ml-8">3</p> -->
                         <p class="yeter">{{ update.short_description }}</p>
@@ -468,7 +469,7 @@
                                 <img src="../static/uploads/{{ comment.image }}" alt="" class="img-9">
                                 <p class="uzak3">{{ comment.description }}</p>
                                 <p class="jeff3">{{ comment.full_name }}</p>
-                                <p class="pati3">Patients</p>
+                                <a href="{{url_for('comment_list')}}"><p class="pati3">Patients</p></a>
                             </figure>
                             {% endif %} {% endfor %}
                         </div>
@@ -558,6 +559,9 @@
             </div>
         </div>
     </section>
+    <div>
+        <a href="{{url_for('department_list')}}"><button type="submit" class="input-4">Edit-Departments</button></a>
+    </div>
     {% endblock %}
 </body>
 
